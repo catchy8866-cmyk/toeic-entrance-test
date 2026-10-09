@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TOEIC Placement Test – Reading</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f7f8fa;--card:#fff;--tx:#1d2330;--mut:#5d6677;--bd:#dde1e8;--ac:#1f5fd6;--ok:#14803c;--okbg:#e4f5ea;--no:#b42318;--nobg:#fdeceb;--sel:#e7efff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171c;--card:#1d222b;--tx:#e8ebf0;--mut:#9aa3b2;--bd:#323946;--ac:#6ea0ff;--ok:#5fd08a;--okbg:#17321f;--no:#ff8a80;--nobg:#3a1f1d;--sel:#23324f}}
+:root[data-theme="dark"]{--bg:#14171c;--card:#1d222b;--tx:#e8ebf0;--mut:#9aa3b2;--bd:#323946;--ac:#6ea0ff;--ok:#5fd08a;--okbg:#17321f;--no:#ff8a80;--nobg:#3a1f1d;--sel:#23324f}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:1.5rem;margin:.2em 0}
+h2{font-size:1.1rem;margin:28px 0 6px;color:var(--ac)}
+.sub{color:var(--mut);margin:0 0 12px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px 16px;margin:12px 0}
+.pass{background:var(--card);border:1px dashed var(--bd);border-radius:10px;padding:12px 14px;margin:10px 0;white-space:pre-line;font-size:.95rem}
+.q{font-weight:600;margin:0 0 8px}
+label{display:block;padding:8px 10px;border:1px solid var(--bd);border-radius:8px;margin:6px 0;cursor:pointer}
+label:hover{background:var(--sel)}
+input{margin-right:8px}
+label.sel{background:var(--sel);border-color:var(--ac)}
+label.ok{background:var(--okbg);border-color:var(--ok)}
+label.no{background:var(--nobg);border-color:var(--no)}
+.ex{margin-top:8px;font-size:.92rem;color:var(--mut)}
+button{background:var(--ac);color:#fff;border:0;border-radius:10px;padding:12px 22px;font-size:1rem;cursor:pointer;margin:6px 8px 6px 0}
+button.g{background:transparent;color:var(--ac);border:1px solid var(--ac)}
+#res{display:none}
+.big{font-size:2rem;font-weight:700}
+.bar{height:10px;background:var(--bd);border-radius:6px;overflow:hidden;margin:8px 0}
+.bar i{display:block;height:100%;background:var(--ac)}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+td,th{border:1px solid var(--bd);padding:6px 8px;text-align:left}
+#prog{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:8px 0;color:var(--mut);font-size:.9rem;z-index:2}
+</style>
+</head>
+<body>
+<main>
+<h1>TOEIC Placement Test – Reading</h1>
+<p class="sub">Bài test đầu vào (trình độ A1–B2) gồm 36 câu: 23 câu Part 5, 6, 7 theo cấu trúc Barron's TOEIC / TOEIC Starter (Cambridge) và 13 câu ngữ pháp (Tenses, Relative Clauses, Conditionals). Nội dung câu hỏi tự soạn. Thời gian gợi ý: 30 phút, không dùng từ điển.</p>
+<div class="card"><label style="border:0;padding:0;cursor:default;background:none" for="sname"><b>Họ và tên học sinh</b></label><input id="sname" type="text" placeholder="Nhập họ tên trước khi nộp bài" autocomplete="name" style="width:100%;padding:10px;margin-top:6px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx);font-size:1rem"><div id="nerr" class="ex" style="color:var(--no)"></div></div>
+<div id="prog"></div>
+<div id="test"></div>
+<button id="sub">Nộp bài</button><button class="g" id="rst">Làm lại</button>
+<div id="res" class="card"></div>
+</main>
+<script>
+const P5=[
+["The meeting has been ____ until next Monday.",["postponed","postpone","postponing","postpones"],0,"Bị động hiện tại hoàn thành: has been + V3."],
+["Ms. Tran is ____ for the marketing department.",["responsible","responsibly","responsibility","respond"],0,"Sau 'is' cần tính từ: responsible for (chịu trách nhiệm về)."],
+["Please send the report ____ email before noon.",["at","by","on","to"],1,"Cụm cố định: by email (qua email)."],
+["____ the heavy rain, the outdoor concert went ahead as planned.",["Although","Despite","Because","However"],1,"Despite + cụm danh từ (the heavy rain). Although cần mệnh đề."],
+["The new manager is ____ than the previous one.",["experience","most experienced","more experienced","experiencing"],2,"Có 'than' nên dùng so sánh hơn: more experienced."],
+["We are pleased to ____ you to our annual dinner.",["invite","invitation","inviting","invited"],0,"Sau 'to' dùng động từ nguyên mẫu: to invite."],
+["Mr. Lee ____ in this company for ten years.",["works","has worked","worked","is working"],1,"'for ten years' → hiện tại hoàn thành: has worked."],
+["The package will be delivered ____ three business days.",["within","between","among","beside"],0,"within + khoảng thời gian = trong vòng."],
+["Customers can get a refund ____ they keep the receipt.",["unless","as long as","because of","whereas"],1,"as long as = miễn là (điều kiện)."],
+["The company's profits increased ____ last year.",["significant","significance","significantly","signify"],2,"Bổ nghĩa cho động từ 'increased' cần trạng từ."],
+["Please ____ the form and return it to the office.",["complete","completion","completely","completing"],0,"Câu mệnh lệnh: Please + động từ nguyên mẫu."],
+["____ of the two candidates has enough experience.",["Both","Neither","Several","Many"],1,"'Neither of the two' + động từ số ít (has) = không ai trong hai người."]
+];
+const P6T=`To: Ms. Harper   From: Greenway Foods – Human Resources
+
+Dear Ms. Harper,
+Thank you for (13) ____ for a job at Greenway Foods. We have reviewed your application, and we would like to invite you for an interview on Friday, May 3. The interview (14) ____ at 10:00 a.m. at our head office. (15) ____ Please bring a copy of your résumé and two references. If you are unable to attend, (16) ____ contact us as soon as possible.
+
+Sincerely,
+Paul Reed`;
+const P6=[
+["(13)",["apply","applying","applied","applies"],1,"Sau giới từ 'for' dùng V-ing: Thank you for applying."],
+["(14)",["will begin","began","has begun","beginning"],0,"Sự kiện trong tương lai (May 3) → will begin."],
+["(15)",["Our office is on the third floor of the Oak Building.","The company was founded in 1998.","We are sorry that your application was not accepted.","Parking is not allowed on weekends."],0,"Câu chèn hợp ngữ cảnh: chỉ dẫn địa điểm phỏng vấn."],
+["(16)",["please","pleased","pleasing","pleasure"],0,"'please contact us' = vui lòng liên hệ."]
+];
+const N1=`NOTICE TO ALL STAFF
+The company cafeteria will be closed from June 3 to June 7 for renovation. During this time, free coffee and snacks will be available in the second-floor lounge. Lunch can be ordered from Daily Bites; menus are available at reception. The cafeteria will reopen on June 10 with new menu options.
+Questions? Contact Ms. Kim at extension 214.`;
+const P7a=[
+["Why was the notice written?",["To announce a new menu","To inform staff of a temporary closure","To hire cafeteria workers","To ask for lunch orders"],1,"Thông báo chính: căng-tin đóng cửa tạm thời để sửa chữa."],
+["Where can employees get free coffee?",["At reception","In the cafeteria","In the second-floor lounge","At Daily Bites"],2,"'free coffee and snacks will be available in the second-floor lounge'."],
+["When will the cafeteria reopen?",["June 3","June 7","June 10","June 14"],2,"'will reopen on June 10'."]
+];
+const E1=`From: Daniel Cho
+To: Customer Service, Brightline Electronics
+Subject: Damaged item – Order #48213
+
+I ordered a Brightline blender on September 2 and received it yesterday. Unfortunately, the glass jar was cracked when I opened the box. I have attached photos. I would like a replacement rather than a refund, as I need it for a family event on September 20. Please let me know whether it can arrive before then.
+
+Daniel Cho`;
+const P7b=[
+["What is the problem?",["The delivery was late","The wrong item was sent","The product was damaged","The price was incorrect"],2,"'the glass jar was cracked' → sản phẩm bị hỏng."],
+["What does Mr. Cho want?",["A refund","A replacement","A discount","A repair"],1,"'I would like a replacement rather than a refund'."],
+["Why does he mention September 20?",["It is when he will return the item","It is when he needs the product","It is when the warranty ends","It is when a sale ends"],1,"Cần dùng cho sự kiện gia đình vào ngày 20/9."],
+["What did Mr. Cho include with his email?",["A receipt","Photos","A coupon","A manual"],1,"'I have attached photos'."]
+];
+const GT=[
+["By the time we arrived, the movie ____.",["had already started","has already started","already starts","was already starting"],0,"Hai hành động trong quá khứ: hành động xảy ra trước dùng quá khứ hoàn thành (had + V3)."],
+["Look! It ____ outside, so take an umbrella.",["rains","is raining","rained","has rained"],1,"'Look!' → hành động đang diễn ra: hiện tại tiếp diễn."],
+["She ____ in Hanoi since 2018.",["lives","lived","has lived","is living"],2,"'since 2018' → hiện tại hoàn thành: has lived."],
+["At 8 p.m. yesterday, I ____ dinner with my family.",["was having","had","have had","am having"],0,"Thời điểm cụ thể trong quá khứ → quá khứ tiếp diễn."],
+["Tomorrow at this time, we ____ to Tokyo.",["will be flying","flew","fly","have flown"],0,"'Tomorrow at this time' → tương lai tiếp diễn: will be + V-ing."]
+];
+const GR=[
+["The woman ____ called you yesterday is our new client.",["who","which","whose","whom"],0,"Thay cho người, làm chủ ngữ → who."],
+["This is the report ____ I wrote last week.",["who","whose","which","where"],2,"Thay cho vật, làm tân ngữ → which (có thể lược bỏ)."],
+["The manager ____ car was stolen reported it to the police.",["who","whose","whom","which"],1,"Chỉ sở hữu (car của manager) → whose."],
+["That is the office ____ I used to work.",["which","where","who","whose"],1,"Thay cho nơi chốn → where (= in which)."]
+];
+const GC=[
+["If it ____ tomorrow, we will cancel the picnic.",["rains","will rain","rained","would rain"],0,"Câu điều kiện loại 1: If + hiện tại đơn, will + V."],
+["If I ____ you, I would accept the offer.",["am","was","were","will be"],2,"Điều kiện loại 2 (không có thật): If + were, would + V."],
+["If she had studied harder, she ____ the exam.",["would pass","would have passed","will pass","passed"],1,"Điều kiện loại 3: If + had V3, would have V3."],
+["____ you leave now, you will miss the train.",["Unless","If not","Until","Although"],0,"Unless + khẳng định = If … not; nghĩa: nếu không đi ngay thì sẽ lỡ tàu."]
+];
+const sections=[
+["Part 5 – Incomplete Sentences (Câu 1–12)","Chọn đáp án đúng nhất để hoàn thành câu.",null,P5],
+["Part 6 – Text Completion (Câu 13–16)","Chọn đáp án đúng nhất để điền vào chỗ trống.",P6T,P6],
+["Part 7 – Reading Comprehension (Câu 17–19)","Đọc thông báo và trả lời câu hỏi.",N1,P7a],
+["Part 7 – Reading Comprehension (Câu 20–23)","Đọc email và trả lời câu hỏi.",E1,P7b],
+["Grammar – Tenses (Câu 24–28)","Chọn thì đúng của động từ.",null,GT],
+["Grammar – Relative Clauses (Câu 29–32)","Chọn đại từ/trạng từ quan hệ đúng.",null,GR],
+["Grammar – Conditional Clauses (Câu 33–36)","Chọn dạng đúng của câu điều kiện.",null,GC]
+];
+const LB=["Part 5","Part 6","Part 7 (notice)","Part 7 (email)","Tenses","Relative Clauses","Conditionals"];
+// DÁN LINK GOOGLE APPS SCRIPT (Web app URL) VÀO GIỮA HAI DẤU NGOẶC KÉP BÊN DƯỚI
+const SHEET_URL="";
+const L=["A","B","C","D"];let flat=[],ans={},done=false;
+function build(){
+ const t=document.getElementById("test");t.innerHTML="";flat=[];ans={};done=false;
+ sections.forEach(s=>{
+  const h=document.createElement("h2");h.textContent=s[0];t.appendChild(h);
+  const p=document.createElement("p");p.className="sub";p.textContent=s[1];t.appendChild(p);
+  if(s[2]){const d=document.createElement("div");d.className="pass";d.textContent=s[2];t.appendChild(d)}
+  s[3].forEach(q=>{
+   const n=flat.length;flat.push(q);
+   const c=document.createElement("div");c.className="card";c.id="c"+n;
+   const num=s[0].startsWith("Part 6")?"":(n+1)+". ";
+   let html='<p class="q">'+(s[0].startsWith("Part 6")?(n+1)+". Blank "+q[0]:num+q[0])+'</p>';
+   q[1].forEach((o,i)=>{html+='<label id="l'+n+'_'+i+'"><input type="radio" name="q'+n+'" value="'+i+'">'+L[i]+'. '+o+'</label>'});
+   html+='<div class="ex" id="e'+n+'"></div>';
+   c.innerHTML=html;t.appendChild(c);
+  });
+ });
+ t.querySelectorAll("input").forEach(r=>r.addEventListener("change",e=>{
+  if(done)return;const n=+e.target.name.slice(1);ans[n]=+e.target.value;
+  q4(n);prog();
+ }));
+ document.getElementById("res").style.display="none";prog();
+}
+function q4(n){for(let i=0;i<4;i++){const l=document.getElementById("l"+n+"_"+i);l.className=ans[n]===i?"sel":""}}
+function prog(){document.getElementById("prog").textContent="Đã trả lời: "+Object.keys(ans).length+" / "+flat.length}
+function level(p){
+ if(p<35)return["Beginner (≈ A1)","Nên bắt đầu từ ngữ pháp cơ bản (thì, giới từ, loại từ) và từ vựng văn phòng thông dụng; phù hợp lộ trình TOEIC Starter."];
+ if(p<60)return["Elementary (≈ A2)","Nắm được kiến thức nền. Hãy luyện thêm Part 5–6 (loại từ, thì, giới từ) và đọc thông báo/email ngắn; phù hợp TOEIC Starter nâng cao."];
+ if(p<80)return["Intermediate (≈ B1)","Nền tảng tốt. Có thể bắt đầu luyện đề TOEIC đầy đủ (Barron's), tập trung Part 6–7 và tăng tốc độ đọc."];
+ return["Upper-Intermediate (≈ B2)","Rất tốt. Hãy luyện đề TOEIC đầy đủ có tính giờ, chú ý Part 7 đoạn kép và từ vựng nâng cao."];
+}
+function submit(){
+ if(done)return;
+ const nm=document.getElementById("sname").value.trim();
+ if(!nm){document.getElementById("nerr").textContent="Vui lòng nhập họ tên học sinh trước khi nộp bài.";document.getElementById("sname").focus();window.scrollTo({top:0,behavior:"smooth"});return}
+ document.getElementById("nerr").textContent="";document.getElementById("sname").disabled=true;done=true;let sc=0,sec=[0,0,0,0],idx=0;
+ flat.forEach((q,n)=>{
+  const ok=ans[n]===q[2];if(ok)sc++;
+  for(let k=0,a=0;k<sections.length;k++){a+=sections[k][3].length;if(n<a){if(ok)sec[k]++;break}}
+  const ex=document.getElementById("e"+n);
+  document.getElementById("l"+n+"_"+q[2]).className="ok";
+  if(!ok&&ans[n]!==undefined)document.getElementById("l"+n+"_"+ans[n]).className="no";
+  ex.textContent=(ok?"✔ Đúng. ":(ans[n]===undefined?"Chưa trả lời. ":"✘ Sai. "))+"Đáp án: "+L[q[2]]+". "+q[3];
+ });
+ const p=Math.round(sc/flat.length*100),lv=level(p);
+ const tot=sections.map(s=>s[3].length);
+ const r=document.getElementById("res");
+ const dt=new Date().toLocaleString("vi-VN");
+ const txt="BÁO CÁO KẾT QUẢ TOEIC PLACEMENT TEST\nHọ tên: "+nm+"\nNgày làm bài: "+dt+"\nTổng điểm: "+sc+"/"+flat.length+" ("+p+"%)\nTrình độ ước lượng: "+lv[0]+"\n"+sections.map((s,i)=>LB[i]+": "+sec[i]+"/"+tot[i]).join("\n");
+ window._rep=txt;
+ r.innerHTML='<h2 style="margin-top:0">Báo cáo kết quả</h2><p><b>Học sinh:</b> '+nm.replace(/</g,"&lt;")+'<br><b>Ngày làm bài:</b> '+dt+'</p><div class="big">'+sc+' / '+flat.length+' ('+p+'%)</div><div class="bar"><i style="width:'+p+'%"></i></div>'+
+ '<p><b>Trình độ ước lượng: '+lv[0]+'</b><br>'+lv[1]+'</p>'+
+ '<table><tr><th>Phần</th><th>Đúng</th></tr>'+
+ sections.map((s,i)=>'<tr><td>'+LB[i]+'</td><td>'+sec[i]+' / '+tot[i]+'</td></tr>').join("")+'</table>'+
+ '<p class="sub">Lưu ý: đây là bài test đọc rút gọn, chỉ mang tính tham khảo, không quy đổi chính xác ra điểm TOEIC 10–990. Phần Listening cần file âm thanh nên chưa có trong bài này.</p><button id="cp">Sao chép báo cáo</button><button class="g" id="pr">In / Lưu PDF</button><span id="cpm" class="sub"></span>';
+ const st=document.createElement("p");st.className="sub";st.id="sst";r.appendChild(st);
+ if(SHEET_URL){
+  st.textContent="Đang gửi điểm về giáo viên...";
+  const payload={name:nm,time:dt,score:sc,total:flat.length,percent:p,level:lv[0],sections:sections.map((s,i)=>LB[i]+": "+sec[i]+"/"+tot[i]).join(" | "),answers:flat.map((q,n)=>ans[n]===undefined?"-":L[ans[n]]).join("")};
+  fetch(SHEET_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify(payload)})
+   .then(()=>{st.textContent="✔ Đã gửi điểm về giáo viên."})
+   .catch(()=>{st.textContent="✘ Không gửi được điểm. Hãy bấm 'Sao chép báo cáo' và gửi lại cho giáo viên."});
+ }else{st.textContent="(Chưa cấu hình gửi điểm tự động. Hãy bấm 'Sao chép báo cáo' và gửi cho giáo viên.)"}
+ document.getElementById("cp").onclick=async()=>{try{await navigator.clipboard.writeText(window._rep);document.getElementById("cpm").textContent="Đã sao chép!"}catch(e){document.getElementById("cpm").textContent="Không sao chép được, hãy chọn và copy thủ công."}};
+ document.getElementById("pr").onclick=()=>window.print();
+ r.style.display="block";r.scrollIntoView({behavior:"smooth"});
+}
+document.getElementById("sub").onclick=submit;
+document.getElementById("rst").onclick=()=>{document.getElementById("sname").disabled=false;document.getElementById("sname").value="";build();window.scrollTo({top:0,behavior:"smooth"})};
+build();
+</script>
+</body>
+</html>
