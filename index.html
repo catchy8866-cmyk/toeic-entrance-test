@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TOEIC cùng Hà Anh – Luyện Listening, Reading và Từ vựng</title>
+<meta name="description" content="Luyện thi TOEIC miễn phí theo 3 cấp độ: Starter, Intermediate, Advanced. Listening, Reading và từ vựng theo chủ đề.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{
+ --bg:#fff8fc;--card:#ffffff;--tx:#514565;--mut:#897f9c;--bd:#f0e1f1;
+ --ac:#a27bea;--ok:#36a879;--okbg:#e5fff2;--no:#e66d91;--nobg:#fff0f4;--sel:#f4edff;
+ --pink:#ffb8d2;--lav:#d9c7ff;--blue:#bdeaff;--mint:#c9f5df;--yellow:#fff0b3;--shadow:0 8px 0 #eadcf3,0 14px 28px #9c79bd18;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 10% 5%,#ffe8f2 0,transparent 28%),radial-gradient(ellipse at 95% 20%,#e4f6ff 0,transparent 25%),var(--bg);color:var(--tx);font:16px/1.65 'Nunito','Be Vietnam Pro',sans-serif;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body:before{content:"✦  ˚  🌈  ˚  ✦";position:absolute;right:5%;top:100px;color:#e4b9dc;font-size:22px;pointer-events:none;opacity:.8}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:0;z-index:10;border-bottom:2px solid #f5e6f4;background:#ffffffeb;backdrop-filter:blur(16px)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+.brand{font:900 1.25rem 'Nunito',sans-serif;color:#8f6bd0;text-decoration:none;letter-spacing:-.5px}
+.brand:before{content:"🐰 ";font-size:1.3em}
+header nav{display:flex;gap:6px;flex-wrap:wrap}
+header nav a{color:#786b8e;text-decoration:none;margin:0;font-size:.9rem;font-weight:800;padding:8px 11px;border-radius:999px;transition:.2s}
+header nav a:hover{color:#8b65ce;background:#f4eaff;transform:translateY(-2px)}
+h1,h2,h3,h4,h5,h6{font-family:'Nunito','Be Vietnam Pro',sans-serif;line-height:1.25;letter-spacing:-.5px}
+h1{font-size:clamp(2rem,5vw,3rem);margin:.45em 0 .22em;font-weight:900;color:#7054a7}
+h1:after{content:" ✨";font-size:.65em}
+h2{font-size:1.45rem;margin:1.4em 0 .5em;font-weight:900;color:#8062b7}
+.sub{color:var(--mut);margin:0 0 18px;max-width:68ch}
+main{padding:28px 0 60px;min-height:72vh}
+.crumb{font-size:.9rem;color:var(--mut);font-weight:800}
+.crumb a,a{color:#9673d0}
+.levels{display:grid;gap:17px;margin-top:24px}
+.lv{position:relative;overflow:hidden;display:block;background:linear-gradient(120deg,#fff 0%,#fff 62%,color-mix(in srgb,var(--c) 17%,white) 100%);border:2px solid color-mix(in srgb,var(--c) 28%,white);border-left:0;border-radius:26px;padding:22px 25px;text-decoration:none;color:var(--tx);box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.lv:after{content:"🐣";position:absolute;right:22px;bottom:12px;font-size:3rem;filter:drop-shadow(0 5px 2px #7e5c7a18);opacity:.88}
+.lv:nth-child(2):after{content:"🐱"}.lv:nth-child(3):after{content:"🦊"}.lv:nth-child(4):after{content:"🌈"}.lv:nth-child(5):after{content:"🧸"}
+.lv:before{content:"";position:absolute;left:0;top:0;bottom:0;width:9px;background:var(--c)}
+.lv:hover{transform:translateY(-4px) rotate(-.25deg);box-shadow:0 11px 0 #eadcf3,0 18px 34px #9c79bd20}
+.lv h2{margin:0 0 7px;color:var(--c);font-size:1.55rem}
+.lv p{margin:5px 72px 0 0;color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{position:relative;display:block;background:linear-gradient(145deg,#fff,#fff9fd);border:2px solid #f0e3f5;border-radius:22px;padding:19px;text-decoration:none;color:var(--tx);box-shadow:0 5px 0 #eee0f2;transition:transform .18s,box-shadow .18s}
+.card:before{content:"✿";position:absolute;right:14px;top:10px;color:#f4bfd8;font-size:1.1rem}
+a.card:hover{border-color:#d9c3f8;transform:translateY(-3px);box-shadow:0 8px 0 #eadcf3}
+.card b{display:block;margin-bottom:4px;font-weight:900;font-size:1.06rem}
+.meta{color:var(--mut);font-size:.9rem}
+.best{color:var(--ok);font-size:.9rem;font-weight:800}
+.tabs{display:flex;gap:8px;margin:18px 0 22px;border:0;flex-wrap:wrap}
+.tabs a{padding:9px 16px;text-decoration:none;color:#897b9c;border:2px solid #eee1f4;border-radius:999px;background:#fff;font-weight:800;transition:.2s}
+.tabs a.on{color:#fff;background:linear-gradient(135deg,#c2a2f8,#f3a9cf);border-color:transparent;box-shadow:0 4px 0 #e8d5f1}
+.box,.q{background:#fff;border:2px solid #f0e3f5;border-radius:23px;padding:18px 20px;margin:15px 0;box-shadow:0 5px 0 #f0e4f4}
+.pass{white-space:pre-line;font-size:1.03rem;line-height:1.85}
+.q p{margin:0 0 12px}
+.q label{display:block;padding:10px 13px;border:2px solid #f0e5f5;border-radius:15px;margin:8px 0;cursor:pointer;background:#fffafd;transition:.15s}
+.q label:hover,.q label:has(input:checked){background:#f7f0ff;border-color:#c5a6f6;transform:translateX(2px)}
+.q input{margin-right:9px;accent-color:#a27bea}
+.q label.ok{background:var(--okbg);border-color:var(--ok)}
+.q label.no{background:var(--nobg);border-color:var(--no)}
+.ex{margin-top:8px;font-size:.92rem;color:var(--mut);background:#fff7fb;padding:9px 12px;border-radius:12px}
+button,.btn{background:linear-gradient(135deg,#a98aef,#e9a6d0);color:#fff;border:0;border-radius:999px;padding:11px 20px;font:800 1rem 'Nunito','Be Vietnam Pro',sans-serif;cursor:pointer;text-decoration:none;display:inline-block;margin:4px 8px 4px 0;box-shadow:0 4px 0 #ddc7ec;transition:transform .15s,filter .15s}
+button:hover,.btn:hover{filter:saturate(1.12);transform:translateY(-2px)}
+button:active,.btn:active{transform:translateY(2px);box-shadow:0 1px 0 #ddc7ec}
+button.g,.btn.g{background:#fff;color:#9572ce;border:2px solid #e4d4f5;box-shadow:0 3px 0 #eee1f6}
+body:not([data-lv]) .btn,body:not([data-lv]) button{background:linear-gradient(135deg,#a98aef,#e9a6d0);color:#fff}
+body:not([data-lv]) .btn.g{color:#9572ce;border-color:#e4d4f5;background:#fff}
+button.sp{background:transparent;color:#a17cda;padding:0 6px;margin:0;font-size:1rem;box-shadow:none}
+select,.fi{padding:11px 13px;border-radius:15px;border:2px solid #eddef4;background:#fff;color:var(--tx);font-size:1rem;font-family:inherit;max-width:100%}
+.w{background:linear-gradient(145deg,#fff,#fff8fd);border:2px solid #f0e3f5;border-radius:20px;padding:15px 17px;box-shadow:0 4px 0 #f0e4f4}
+.w i{color:var(--mut)}
+.score{font:900 1.8rem 'Nunito',sans-serif;margin:10px 0 2px;color:#8c69ca}
+footer{border-top:2px solid #f3e4f2;padding:25px 0 42px;color:var(--mut);font-size:.9rem;text-align:center;background:#fff9fd}
+:focus-visible{outline:3px solid #b79aec;outline-offset:3px}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0}
+.fi{flex:1;min-width:140px}
+button.x{background:transparent;color:var(--no);padding:0 6px;margin:0;font-size:1.1rem;box-shadow:none}
+.fcard{background:linear-gradient(145deg,#fff,#f7efff 55%,#fff0f7);border:3px solid #d9c5f6;border-radius:30px;min-height:210px;display:flex;align-items:center;justify-content:center;text-align:center;padding:28px;cursor:pointer;font-size:1.25rem;margin:15px 0;box-shadow:0 9px 0 #eadcf3,0 16px 30px #9c79bd18;transition:transform .2s}
+.fcard:hover{transform:translateY(-3px) rotate(.3deg)}
+.fcard .big{font:900 2.2rem 'Nunito',sans-serif;color:#8d6ac7}
+.frow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 0;border-top:1px solid var(--bd)}
+.frow span{flex:1;min-width:160px;overflow-wrap:anywhere}
+.frow .btn{margin:0;padding:8px 16px;font-size:.95rem}
+.tag{display:inline-block;font-size:.8rem;padding:3px 10px;border-radius:999px;border:1px solid #e7d7f3;color:#9572ce;background:#faf5ff;margin-left:6px;font-weight:800}
+details summary{color:#8d6ac7}
+@media(max-width:640px){
+ .wrap{padding:0 15px}header .wrap{align-items:flex-start;flex-direction:column;gap:7px}header nav{gap:2px}header nav a{font-size:.82rem;padding:7px 9px}
+ main{padding-top:20px}.lv{padding:19px 18px}.lv p{margin-right:38px}.lv:after{right:12px;font-size:2rem;opacity:.45}
+ .grid{grid-template-columns:1fr}.box,.q{padding:15px}.tabs a{padding:8px 12px;font-size:.9rem}
+}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+</style>
+
+
+</head>
+<body>
+<header><div class="wrap">
+ <a class="brand" href="#/">TOEIC cùng Hà Anh</a>
+ <nav><a href="#/">Cấp độ</a><a href="#/library">Kho ôn tập</a><a href="#/lessons">Bài giảng</a><a href="#/my">Từ vựng của tôi</a><a href="test.html">Test đầu vào</a></nav>
+</div></header>
+<main><div class="wrap" id="app"></div></main>
+<footer><div class="wrap">Bài luyện tập do Hà Anh biên soạn. Chưa biết bắt đầu từ cấp nào? Hãy làm <a href="test.html" style="color:inherit">test đầu vào</a>.</div></footer>
+<script>
+const Q=(q,o,a,e)=>({q,o,a,e});
+const D={
+starter:{n:"Starter",d:"Dành cho người mới bắt đầu (khoảng A1–A2): hội thoại, thông báo và email ngắn, từ vựng công việc hằng ngày.",c:"#0b7f82",
+L:[
+{t:"Đặt phòng họp",s:["M: Hi Anna, can I book the meeting room for tomorrow?","W: Sure. What time do you need it?","M: From two to four in the afternoon. We have a meeting with a client.","W: The room is free then. I'll put your name on the schedule.","M: Thank you. Could you also order some coffee?","W: Of course. For how many people?","M: Six people."],
+ q:[Q("What does the man want to do?",["Book a meeting room","Cancel a meeting","Meet a client at a cafe","Order lunch"],0,"Anh ấy hỏi: 'book the meeting room'."),
+    Q("What time is the meeting?",["10 a.m. to 12 p.m.","2 p.m. to 4 p.m.","4 p.m. to 6 p.m.","6 p.m. to 8 p.m."],1,"'From two to four in the afternoon'."),
+    Q("How many people need coffee?",["Four","Five","Six","Seven"],2,"'Six people'.")]},
+{t:"Thông báo ở siêu thị",s:["Attention, shoppers. Fresh Mart will close at nine o'clock tonight. Today only, all fruit is half price until eight o'clock. Please bring your shopping to the cashier before closing. Thank you for shopping with us."],
+ q:[Q("Where is this announcement being made?",["At an airport","At a hotel","At a supermarket","At a school"],2,"'Fresh Mart', 'shoppers', 'cashier' → siêu thị."),
+    Q("What is half price today?",["Bread","Fruit","Milk","Coffee"],1,"'all fruit is half price'."),
+    Q("What time does the store close?",["8:00","10:00","6:00","9:00"],3,"'close at nine o'clock'.")]}
+],
+R:[
+{t:"Thông báo văn phòng",p:"OFFICE NOTICE\nStarting Monday, the office will open at 8:30 a.m. instead of 9:00 a.m. Please arrive on time. Lunch break is from 12:00 to 1:00 p.m. If you are sick, call Ms. Park before 8:00 a.m.",
+ q:[Q("What is changing on Monday?",["The lunch break","The opening time","Ms. Park's job","The office address"],1,"Giờ mở cửa đổi từ 9:00 sang 8:30."),
+    Q("When is lunch break?",["11:00 to 12:00","1:00 to 2:00","2:00 to 3:00","12:00 to 1:00"],3,"'from 12:00 to 1:00 p.m.'."),
+    Q("Who should sick employees call?",["Mr. Lee","The doctor","Ms. Park","The manager"],2,"'call Ms. Park before 8:00 a.m.'.")]},
+{t:"Email thăm văn phòng",p:"Hi Tom,\nI will visit your office on Thursday. My flight arrives at 10:00 a.m., so I can be there at noon. Can we have lunch together? After lunch, I'd like to see the new product.\nBest,\nLinda",
+ q:[Q("Why is Linda writing?",["To plan a visit","To buy a product","To ask for a job","To change her flight"],0,"Cô ấy báo sẽ đến thăm văn phòng."),
+    Q("When will Linda arrive at the office?",["Thursday at 10:00","Thursday at noon","Friday at noon","Wednesday evening"],1,"'I can be there at noon' (Thursday)."),
+    Q("What does Linda want to see after lunch?",["The city","The manager's house","The airport","The new product"],3,"'I'd like to see the new product'.")]}
+],
+V:[
+{t:"Văn phòng",w:[["meeting","n","cuộc họp","The meeting starts at nine."],["schedule","n","lịch trình","Please check the schedule."],["manager","n","quản lý","The manager is in her office."],["desk","n","bàn làm việc","Put the files on my desk."],["report","n","báo cáo","I wrote a short report."],["deadline","n","hạn chót","The deadline is Friday."],["colleague","n","đồng nghiệp","My colleague speaks French."],["copy","v","sao chép, photo","Please copy this page."]]},
+{t:"Du lịch",w:[["ticket","n","vé","I bought two tickets."],["flight","n","chuyến bay","Our flight leaves at noon."],["passport","n","hộ chiếu","Don't forget your passport."],["luggage","n","hành lý","Her luggage is heavy."],["reservation","n","sự đặt chỗ","I have a reservation for two."],["arrive","v","đến nơi","We arrive at six."],["depart","v","khởi hành","The train departs at 8:15."],["hotel","n","khách sạn","The hotel is near the station."]]},
+{t:"Mua sắm",w:[["price","n","giá cả","The price is low."],["discount","n","giảm giá","We offer a 10% discount."],["receipt","n","biên lai","Keep your receipt."],["customer","n","khách hàng","The customer wants a refund."],["cashier","n","thu ngân","Pay the cashier."],["refund","n","tiền hoàn lại","I'd like a refund."],["sale","n","đợt giảm giá","The sale ends Sunday."],["order","n/v","đơn hàng; đặt hàng","I placed an order online."]]}
+]},
+intermediate:{n:"Intermediate",d:"Dành cho trình độ trung cấp (khoảng B1): hội thoại công việc, quảng cáo, memo và từ vựng nhân sự, tài chính, công nghệ.",c:"#3d5a98",
+L:[
+{t:"Đơn hàng bị giao trễ",s:["W: Mr. Brown, this is Sandra from Delta Supplies. I'm calling about your order.","M: Yes, it was supposed to arrive yesterday.","W: I apologize. There was a delay at the warehouse because of a system error. It will be delivered by Friday, and we'll waive the shipping fee.","M: Friday is fine, but I need the printers for a training session on Thursday. Can you send half of the order earlier?","W: Let me check. I'll call you back within the hour."],
+ q:[Q("Why is the woman calling?",["To place a new order","To explain a delay","To request payment","To confirm a training date"],1,"Cô ấy xin lỗi vì đơn hàng bị trễ."),
+    Q("What will the company do for the man?",["Refund the full order","Send a free printer","Waive the shipping fee","Extend the warranty"],2,"'we'll waive the shipping fee'."),
+    Q("What does the man ask for?",["To cancel the order","A larger discount","A different printer","Part of the order earlier"],3,"'send half of the order earlier'.")]},
+{t:"Thông báo cuộc họp",s:["Good morning, everyone. Before we begin, I'd like to announce that our quarterly sales review has been moved from Wednesday to Friday at 3 p.m. because the conference room is being repainted. Please send me your sales figures by Thursday noon so I can prepare the summary. Also, a reminder that parking in lot B will be unavailable next week."],
+ q:[Q("What is the speaker announcing?",["A new employee","A change of meeting schedule","A promotion","A budget cut"],1,"Cuộc họp bị dời từ thứ Tư sang thứ Sáu."),
+    Q("Why has the meeting been moved?",["The manager is traveling","There is a holiday","The room is being repainted","The system is down"],2,"'the conference room is being repainted'."),
+    Q("What should listeners do by Thursday noon?",["Park in lot B","Book a room","Submit expense reports","Send their sales figures"],3,"'send me your sales figures by Thursday noon'.")]}
+],
+R:[
+{t:"Quảng cáo khách sạn",p:"HARBOR VIEW HOTEL – WEEKEND SPECIAL\nBook two nights between October 1 and November 30 and get the third night free. Enjoy free breakfast, free Wi-Fi, and access to our spa. Offer cannot be combined with other discounts. Reservations must be made online at least 7 days before arrival.",
+ q:[Q("What is being advertised?",["A restaurant","A hotel promotion","A travel agency","A spa training course"],1,"Ưu đãi lưu trú: ở 2 đêm tặng đêm thứ 3."),
+    Q("What is included in the offer?",["Airport transfer","Dinner","Car rental","Free breakfast"],3,"'free breakfast, free Wi-Fi'."),
+    Q("What is required to get the offer?",["Booking online at least 7 days ahead","Paying in cash","Staying a full month","Joining a membership"],0,"'Reservations must be made online at least 7 days before arrival'.")]},
+{t:"Memo về báo cáo chi phí",p:"MEMO\nTo: All Department Heads\nFrom: Karen Wu, Human Resources\nStarting next month, employees will submit travel expense reports through the new online system instead of paper forms. Reports must be filed within 10 days of returning from a trip; late reports will not be reimbursed. Training sessions will be held on the 5th and 12th. Attendance is required for anyone who travels for business.",
+ q:[Q("What is the purpose of the memo?",["To announce a new expense reporting system","To schedule a business trip","To hire new staff","To change the vacation policy"],0,"Chuyển từ biểu mẫu giấy sang hệ thống trực tuyến."),
+    Q("What happens if a report is late?",["It is returned","The employee must retrain","It will not be reimbursed","It is sent to HR"],2,"'late reports will not be reimbursed'."),
+    Q("Who must attend the training?",["All department heads","New employees only","Karen Wu's team","Employees who travel for business"],3,"'Attendance is required for anyone who travels for business'.")]}
+],
+V:[
+{t:"Nhân sự",w:[["applicant","n","ứng viên","Each applicant must send a résumé."],["résumé","n","sơ yếu lý lịch","Update your résumé."],["interview","n/v","buổi phỏng vấn","The interview is on Monday."],["qualification","n","trình độ, bằng cấp","She has the right qualifications."],["promote","v","thăng chức","He was promoted to manager."],["resign","v","từ chức","She resigned last week."],["benefit","n","phúc lợi","The job offers good benefits."],["recruit","v","tuyển dụng","We plan to recruit ten staff."]]},
+{t:"Tài chính",w:[["budget","n","ngân sách","The budget is limited."],["invoice","n","hóa đơn","Please pay the invoice by May 5."],["expense","n","chi phí","Travel expenses are reimbursed."],["revenue","n","doanh thu","Revenue rose by 5%."],["profit","n","lợi nhuận","The firm made a profit."],["payment","n","sự thanh toán","Payment is due in 30 days."],["invest","v","đầu tư","They invest in new equipment."],["account","n","tài khoản","Open a bank account."]]},
+{t:"Công nghệ",w:[["install","v","cài đặt","Install the program."],["update","v/n","cập nhật","Update the software."],["password","n","mật khẩu","Change your password."],["network","n","mạng","The network is down."],["software","n","phần mềm","We use accounting software."],["backup","n","bản sao lưu","Make a backup of the files."],["upgrade","v","nâng cấp","We will upgrade the system."],["device","n","thiết bị","Turn off all devices."]]}
+]},
+advanced:{n:"Advanced",d:"Dành cho người học nâng cao (B2 trở lên): đàm phán, báo cáo kinh doanh, chính sách và từ vựng chuyên ngành.",c:"#b3401e",
+L:[
+{t:"Đàm phán hợp đồng",s:["M: We've reviewed your proposal, and the pricing is competitive. However, the delivery timeline concerns us.","W: We quoted twelve weeks because of the custom components. If you can finalize the specifications by the end of the month, we may be able to reduce it to ten.","M: That would help. Our launch is scheduled for early March, so any delay would be costly.","W: Understood. I'll draft an amendment with a penalty clause for late delivery, and our legal team will send it to you tomorrow.","M: Good. In that case, I'll recommend we proceed."],
+ q:[Q("What is the man concerned about?",["The price","The product quality","The delivery timeline","The warranty"],2,"'the delivery timeline concerns us'."),
+    Q("What does the woman need to shorten the timeline?",["A larger deposit","Final specifications by month-end","A new supplier","Approval from legal"],1,"'finalize the specifications by the end of the month'."),
+    Q("What will the woman's company send tomorrow?",["A revised price list","A product sample","An invoice","A contract amendment"],3,"'draft an amendment ... legal team will send it'.")]},
+{t:"Cập nhật kết quả kinh doanh",s:["Thank you all for joining today's call. Despite higher material costs, our revenue grew eight percent this quarter, mainly driven by online sales in Asia. To protect our margins, we'll consolidate two regional warehouses by June, which is expected to save about two million dollars annually. We don't anticipate layoffs, as affected employees will be offered positions at the new facility."],
+ q:[Q("What is the main topic of the talk?",["A product recall","A merger","A new CEO","The company's quarterly results and plans"],3,"Doanh thu quý và kế hoạch hợp nhất kho."),
+    Q("What drove revenue growth?",["Online sales in Asia","Lower material costs","Higher prices","New stores"],0,"'mainly driven by online sales in Asia'."),
+    Q("What will happen to employees at the closing warehouses?",["They will be laid off","They will receive bonuses","They will be offered new positions","They will retire early"],2,"'offered positions at the new facility'.")]}
+],
+R:[
+{t:"Chính sách làm việc từ xa",p:"REMOTE WORK POLICY UPDATE (EXCERPT)\nFollowing a six-month pilot, the company will adopt a hybrid model beginning January. Employees whose roles permit remote work may work from home up to three days per week, provided they attend all scheduled in-person team meetings. Managers will evaluate productivity quarterly using project outcomes rather than hours logged. Employees who wish to work remotely full-time must submit a written request to their department head, which will be approved only in exceptional circumstances.",
+ q:[Q("What is the policy about?",["A hybrid work arrangement","A new office location","A reduction in staff","A salary increase"],0,"Mô hình làm việc kết hợp (hybrid)."),
+    Q("How will managers evaluate productivity?",["By hours logged","By project outcomes","By attendance","By employee surveys"],1,"'using project outcomes rather than hours logged'."),
+    Q("What is true about full-time remote work?",["It is available to all staff","It needs no approval","It is only for managers","It requires a written request and is rarely approved"],3,"Chỉ được duyệt trong 'exceptional circumstances'.")]},
+{t:"Email giải quyết khiếu nại",p:"Dear Mr. Alvarez,\nThank you for bringing the billing discrepancy to our attention. Upon reviewing your account, we found that you were charged twice for the premium plan in August. A refund of $49 will be processed within five to seven business days. As a gesture of goodwill, we have also extended your subscription by one month at no cost. Should you notice any further irregularities, please contact us directly at the number below.\nSincerely,\nPriya Nair, Customer Relations",
+ q:[Q("Why was the email sent?",["To promote a premium plan","To respond to a billing complaint","To cancel a subscription","To request payment"],1,"Phản hồi về sai lệch trong hóa đơn."),
+    Q("What caused the problem?",["A late payment","A canceled account","An incorrect address","A double charge"],3,"'charged twice for the premium plan'."),
+    Q("What is offered in addition to the refund?",["An extra month of subscription","A discount coupon","A free upgrade","A phone call"],0,"'extended your subscription by one month at no cost'.")]}
+],
+V:[
+{t:"Hợp đồng & đàm phán",w:[["negotiate","v","đàm phán","They negotiated a better price."],["clause","n","điều khoản","The clause limits liability."],["terminate","v","chấm dứt","Either party may terminate the contract."],["comply with","v","tuân thủ","All staff must comply with the policy."],["amend","v","sửa đổi","The agreement was amended."],["liability","n","trách nhiệm pháp lý","The firm accepts no liability."],["stipulate","v","quy định rõ","The contract stipulates 30 days' notice."],["renew","v","gia hạn","She renewed her lease."]]},
+{t:"Marketing & bán hàng",w:[["campaign","n","chiến dịch","The campaign targets young adults."],["target market","n","thị trường mục tiêu","Define your target market."],["brand","n","thương hiệu","A strong brand builds trust."],["competitor","n","đối thủ cạnh tranh","Our competitors cut prices."],["launch","v","ra mắt","They launch the product in May."],["demographic","n","nhóm nhân khẩu học","Younger demographics prefer apps."],["market share","n","thị phần","Our market share grew."],["consumer","n","người tiêu dùng","Consumer demand is rising."]]},
+{t:"Quản trị & hậu cần",w:[["allocate","v","phân bổ","Allocate resources wisely."],["streamline","v","tinh giản","We streamlined the process."],["supervise","v","giám sát","She supervises ten workers."],["implement","v","triển khai","Implement the new policy."],["shipment","n","lô hàng","The shipment arrived late."],["inventory","n","hàng tồn kho","Check the inventory."],["consolidate","v","hợp nhất","Consolidate the two offices."],["delegate","v","ủy quyền","Delegate routine tasks."]]}
+]}
+};
+const $=s=>document.querySelector(s),app=$("#app");
+const LS={get(k){try{return JSON.parse(localStorage.getItem("hub:"+k))}catch(e){return null}},set(k,v){try{localStorage.setItem("hub:"+k,JSON.stringify(v))}catch(e){}}};
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+function stopSpeech(){try{speechSynthesis.cancel()}catch(e){}}
+function say(lines,rate){
+ if(!("speechSynthesis" in window)){alert("Trình duyệt chưa hỗ trợ đọc tự động. Hãy dùng Chrome hoặc Safari mới.");return}
+ stopSpeech();
+ const vs=speechSynthesis.getVoices().filter(v=>/^en/i.test(v.lang)),v=vs.find(v=>/en-US/i.test(v.lang))||vs[0];
+ lines.forEach(l=>{const m=/^([MW]):\s*/.exec(l),u=new SpeechSynthesisUtterance(l.replace(/^([MW]):\s*/,""));
+  u.lang="en-US";if(v)u.voice=v;u.rate=rate;u.pitch=m?(m[1]==="M"?.8:1.25):1;speechSynthesis.speak(u)});
+}
+function quiz(box,qs,key,onCheck){
+ box.innerHTML=qs.map((x,n)=>`<div class="q"><p><b>${n+1}.</b> ${x.q}</p>`+x.o.map((o,j)=>`<label id="l${n}_${j}"><input type="radio" name="q${n}" value="${j}">${"ABCD"[j]}. ${o}</label>`).join("")+`<div class="ex" id="e${n}"></div></div>`).join("")+`<button id="chk">Chấm điểm</button><div id="res"></div>`;
+ $("#chk").onclick=()=>{
+  let sc=0;
+  qs.forEach((x,n)=>{
+   const pick=document.querySelector(`input[name=q${n}]:checked`),a=pick?+pick.value:-1;
+   if(a===x.a)sc++;
+   box.querySelectorAll(`input[name=q${n}]`).forEach(i=>i.disabled=true);
+   $("#l"+n+"_"+x.a).className="ok";
+   if(a>=0&&a!==x.a)$("#l"+n+"_"+a).className="no";
+   $("#e"+n).textContent=(a===x.a?"Đúng. ":a<0?"Chưa chọn. ":"Sai. ")+"Đáp án: "+"ABCD"[x.a]+". "+x.e;
+  });
+  const old=LS.get(key),best=old&&old.s>sc?old.s:sc;LS.set(key,{s:best,t:qs.length});
+  $("#chk").style.display="none";
+  $("#res").innerHTML=`<div class="score">${sc} / ${qs.length}</div><p class="meta">Điểm cao nhất: ${best} / ${qs.length}</p><button onclick="route()">Làm lại</button>`;
+  if(onCheck)onCheck();
+ };
+}
+const TABS=[["listening","Listening"],["reading","Reading"],["vocab","Từ vựng"]];
+function head(lv,sk){const L=D[lv];return `<p class="crumb"><a href="#/">Trang chủ</a> / ${L.n}</p><h1>${L.n}</h1><p class="sub">${L.d}</p><div class="tabs">`+TABS.map(([k,t])=>`<a class="${k===sk?"on":""}" href="#/${lv}/${k}">${t}</a>`).join("")+`</div>`}
+function home(){
+ app.innerHTML=`<h1>Luyện TOEIC theo 3 cấp độ</h1><p class="sub">Mỗi cấp có bài Listening, Reading và từ vựng theo chủ đề, chấm điểm tự động kèm giải thích. Chọn cấp phù hợp để bắt đầu.</p><div class="levels">`+
+ Object.keys(D).map(k=>{const L=D[k];return `<a class="lv" style="--c:${L.c}" href="#/${k}/listening"><h2>${L.n}</h2><p>${L.d}</p><p class="meta">${L.L.length} bài Listening, ${L.R.length} bài Reading, ${L.V.length} chủ đề từ vựng</p></a>`}).join("")+`<a class="lv" style="--c:#7b61a8" href="#/library"><h2>Kho thư viện ôn tập</h2><p>Bài tập từ vựng và ngữ cảnh TOEIC được phân theo Starter, Intermediate, Advanced, có chấm điểm và giải thích.</p></a><a class="lv" style="--c:#c0861f" href="#/lessons"><h2>Bài giảng</h2><p>Slide PowerPoint và PDF của từng buổi học do giáo viên cập nhật.</p></a><a class="lv" style="--c:#8a63c7" href="#/my"><h2>Từ vựng của tôi</h2><p>Tự tạo chủ đề, thêm từ mới và ôn bằng flashcard, bài kiểm tra.</p></a></div>`+
+ `<h2>Cách học gợi ý</h2><p class="sub">Làm test đầu vào để biết cấp độ. Mỗi ngày nghe 1 bài, đọc 1 bài và ôn 1 chủ đề từ vựng. Làm lại bài đến khi đạt điểm tối đa, rồi chuyển lên cấp tiếp theo.</p><a class="btn" href="test.html">Làm test đầu vào</a>`;
+}
+function list(lv,sk){
+ const L=D[lv],items=sk==="listening"?L.L:sk==="reading"?L.R:L.V;
+ app.innerHTML=head(lv,sk)+`<div class="grid">`+items.map((it,i)=>{
+  const b=LS.get(`${lv}-${sk}-${i}`),n=sk==="vocab"?it.w.length+" từ":it.q.length+" câu";
+  return `<a class="card" href="#/${lv}/${sk}/${i}"><b>${it.t}</b><span class="meta">${n}</span>${b?`<div class="best">Điểm cao nhất: ${b.s}/${b.t}</div>`:""}</a>`}).join("")+`</div>`;
+}
+function item(lv,sk,i,mode){
+ const L=D[lv],key=`${lv}-${sk}-${i}`,back=`<p><a href="#/${lv}/${sk}">← Quay lại danh sách</a></p>`;
+ if(sk==="listening"){
+  const it=L.L[i];if(!it)return list(lv,sk);
+  app.innerHTML=head(lv,sk)+back+`<h2>${it.t}</h2><div class="box"><p style="margin-top:0">Nghe đoạn hội thoại hoặc bài nói, rồi trả lời câu hỏi. Bạn có thể nghe lại nhiều lần.</p><button id="play">Nghe</button><button class="g" id="stop">Dừng</button> <select id="rate" aria-label="Tốc độ"><option value="0.8">Chậm</option><option value="1" selected>Bình thường</option><option value="1.15">Nhanh</option></select></div><div id="qb"></div><div class="box" id="tr" hidden><b>Transcript</b><p class="pass" style="margin-bottom:0">${it.s.map(x=>x.replace(/^M:/,"Man:").replace(/^W:/,"Woman:")).join("\n")}</p></div>`;
+  $("#play").onclick=()=>say(it.s,+$("#rate").value);$("#stop").onclick=stopSpeech;
+  quiz($("#qb"),it.q,key,()=>{$("#tr").hidden=false});
+ }else if(sk==="reading"){
+  const it=L.R[i];if(!it)return list(lv,sk);
+  app.innerHTML=head(lv,sk)+back+`<h2>${it.t}</h2><div class="box pass">${it.p}</div><div id="qb"></div>`;
+  quiz($("#qb"),it.q,key);
+ }else{
+  const it=L.V[i];if(!it)return list(lv,sk);
+  if(mode==="quiz"){
+   const ms=it.w.map(x=>x[2]),qs=shuffle(it.w).map(x=>{const o=shuffle([x[2],...shuffle(ms.filter(m=>m!==x[2])).slice(0,3)]);return Q(`Nghĩa của <b>${x[0]}</b> là gì?`,o,o.indexOf(x[2]),`${x[0]} (${x[1]}): ${x[2]}. Ví dụ: ${x[3]}`)});
+   app.innerHTML=head(lv,sk)+back+`<h2>Kiểm tra: ${it.t}</h2><div id="qb"></div>`;quiz($("#qb"),qs,key);
+  }else{
+   app.innerHTML=head(lv,sk)+back+`<h2>${it.t}</h2><p><a class="btn" href="#/${lv}/vocab/${i}/quiz">Làm bài kiểm tra</a></p><div class="grid">`+it.w.map(x=>`<div class="w"><b>${x[0]}</b> <i>(${x[1]})</i> <button class="sp" data-w="${x[0]}" aria-label="Nghe phát âm ${x[0]}">🔊</button><div>${x[2]}</div><div class="ex">${x[3]}</div></div>`).join("")+`</div>`;
+  }
+ }
+}
+/* ===== Kho ôn tập: câu hỏi mới biên soạn theo các chủ điểm từ tài liệu tham khảo ===== */
+const REVIEW={
+starter:{title:"Starter · Nền tảng",desc:"Từ vựng công việc, mua sắm, du lịch và giao tiếp cơ bản.",qs:[
+ Q("Please keep the ______ after you pay. You may need it to return the item.",["receipt","schedule","passport","deadline"],0,"Receipt là biên lai; thường dùng khi đổi hoặc trả hàng."),
+ Q("Our flight will ______ at 7:30 a.m., so please arrive at the airport early.",["depart","refund","install","resign"],0,"Depart nghĩa là khởi hành."),
+ Q("The manager has a busy ______ today, with four meetings and two interviews.",["schedule","discount","luggage","cashier"],0,"Schedule là lịch trình."),
+ Q("This jacket costs $80, but there is a 20% ______ this week.",["discount","invoice","network","benefit"],0,"Discount nghĩa là giảm giá."),
+ Q("If you need a room for two nights, please make a ______ in advance.",["reservation","receipt","promotion","colleague"],0,"Reservation là việc đặt chỗ/đặt phòng."),
+ Q("Choose the best word: My ______ helped me finish the report before Friday.",["colleague","cashier","passenger","customer"],0,"Colleague là đồng nghiệp."),
+ Q("The store closes at 9 p.m. Please pay at the ______ before then.",["cashier","platform","lobby","department"],0,"Cashier là thu ngân."),
+ Q("I cannot finish this task today. The ______ is tomorrow morning.",["deadline","flight","refund","receipt"],0,"Deadline là hạn chót."),
+]},
+intermediate:{title:"Intermediate · Trung cấp",desc:"Từ vựng nhân sự, tài chính, tuyển dụng và hoạt động doanh nghiệp.",qs:[
+ Q("All travel ______ must be submitted within ten days of returning.",["expenses","profits","benefits","qualifications"],0,"Expenses là các khoản chi phí."),
+ Q("The company plans to ______ three new sales representatives next month.",["recruit","resign","reimburse","postpone"],0,"Recruit nghĩa là tuyển dụng."),
+ Q("Please pay the attached ______ by the end of the month.",["invoice","résumé","agenda","allowance"],0,"Invoice là hóa đơn yêu cầu thanh toán."),
+ Q("Because demand increased, the firm reported higher annual ______.",["revenue","interview","vacancy","equipment"],0,"Revenue là doanh thu; profit là lợi nhuận."),
+ Q("Applicants should send a ______ and a cover letter before Friday.",["résumé","receipt","forecast","contractor"],0,"Résumé là sơ yếu lý lịch/CV."),
+ Q("The meeting was ______ until Friday because the conference room was unavailable.",["postponed","installed","recruited","reimbursed"],0,"Postpone nghĩa là hoãn lại."),
+ Q("Employees will use the new online system to ______ their travel costs.",["claim","advertise","resign","negotiate"],0,"Claim expenses là yêu cầu thanh toán/hoàn trả chi phí."),
+ Q("The firm made a healthy ______ after reducing operating costs.",["profit","applicant","deadline","reservation"],0,"Profit là lợi nhuận sau khi trừ chi phí."),
+]},
+advanced:{title:"Advanced · Nâng cao",desc:"Từ vựng kinh doanh, xu hướng, chính sách và cách diễn đạt trang trọng.",qs:[
+ Q("The board approved a plan to ______ the outdated approval process and reduce delays.",["streamline","fluctuate","withdraw","overlook"],0,"Streamline nghĩa là tinh giản để hiệu quả hơn."),
+ Q("Sales have fallen for three consecutive quarters, indicating a downward ______.",["trend","benefit","vacancy","incentive"],0,"Downward trend là xu hướng đi xuống."),
+ Q("The revised policy will be ______ in stages over the next six months.",["phased in","written off","taken over","ruled out"],0,"Phase in nghĩa là triển khai dần theo từng giai đoạn."),
+ Q("The supplier agreed to ______ the contract after both parties identified errors.",["amend","depart","recruit","reimburse"],0,"Amend a contract là sửa đổi hợp đồng."),
+ Q("The company is reviewing overheads in an effort to ______ operating costs.",["reduce","broaden","strengthen","fluctuate"],0,"Reduce costs nghĩa là giảm chi phí."),
+ Q("Despite monthly ______ in demand, overall revenue rose by 8% this year.",["fluctuations","qualifications","reservations","recruitments"],0,"Fluctuations là những biến động lên xuống."),
+ Q("Management decided to ______ the rollout until the security review was complete.",["defer","streamline","amend","expand"],0,"Defer nghĩa là trì hoãn/để lại đến thời điểm sau."),
+ Q("The proposal was rejected because its projected benefits did not ______ the implementation costs.",["outweigh","phase in","account for","comply with"],0,"Outweigh nghĩa là lớn hơn/vượt trội hơn về mức độ hoặc giá trị."),
+]}
+};
+function reviewPage(level){
+ const keys=Object.keys(REVIEW),selected=keys.includes(level)?level:"";
+ const tabs=`<p class="crumb"><a href="#/">Trang chủ</a> / Kho ôn tập</p><h1>Kho thư viện ôn tập TOEIC</h1><p class="sub">Bài tập luyện tập mới được biên soạn theo các chủ điểm từ tài liệu tham khảo đã tải lên; không sao chép nguyên văn bài tập trong sách. Chọn cấp độ để luyện và xem giải thích sau khi nộp bài.</p><div class="tabs">`+[["","Tất cả cấp độ"],...keys.map(k=>[k,REVIEW[k].title])].map(([k,t])=>`<a class="${k===selected?"on":""}" href="#/library${k?"/"+k:""}">${t}</a>`).join("")+`</div>`;
+ if(selected){const b=REVIEW[selected];app.innerHTML=tabs+`<div class="box"><h2>${b.title}</h2><p class="sub">${b.desc}</p><p class="meta">${b.qs.length} câu hỏi · Chấm điểm tự động</p><div id="reviewQuiz"></div></div>`;quiz($("#reviewQuiz"),b.qs,"review-"+selected);return;}
+ app.innerHTML=tabs+`<div class="grid">`+keys.map(k=>`<a class="card" href="#/library/${k}"><b>${REVIEW[k].title}</b><span class="meta">${REVIEW[k].qs.length} câu hỏi</span><p class="sub">${REVIEW[k].desc}</p></a>`).join("")+`</div>`;
+}
+
+function route(){
+ stopSpeech();window.scrollTo(0,0);
+ const [lv,sk,i,mode]=(location.hash.slice(2)||"").split("/").filter(Boolean);
+ if(lv==="library"){document.body.removeAttribute("data-lv");return reviewPage(sk)}
+ if(lv==="lessons"){document.body.removeAttribute("data-lv");return lessonsPage(sk)}
+ if(lv==="my"){document.body.removeAttribute("data-lv");return sk?myTopic(sk,i):myHome()}
+ document.body.dataset.lv=D[lv]?lv:"";if(!D[lv]){document.body.removeAttribute("data-lv");return home()}
+ if(!sk||!TABS.some(t=>t[0]===sk))return list(lv,"listening");
+ if(i===undefined)return list(lv,sk);
+ item(lv,sk,+i,mode);
+}
+/* ===== Từ vựng của tôi (lưu trong localStorage, khóa "hub:my") ===== */
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const MY={load(){const d=LS.get("my");return Array.isArray(d)?d:[]},save(d){LS.set("my",d)}};
+const newId=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const myHead=t=>`<p class="crumb"><a href="#/">Trang chủ</a> / <a href="#/my">Từ vựng của tôi</a> / ${esc(t.name)}</p><h1>${esc(t.name)}</h1>`;
+function myClean(x){
+ if(!Array.isArray(x))return null;
+ return x.filter(t=>t&&typeof t.name==="string"&&t.name.trim()&&Array.isArray(t.words)).map(t=>({name:t.name.trim().slice(0,60),words:t.words.filter(w=>w&&typeof w.w==="string"&&typeof w.m==="string"&&w.w.trim()&&w.m.trim()).map(w=>({w:w.w.trim().slice(0,80),t:String(w.t||"").slice(0,12),m:w.m.trim().slice(0,200),e:String(w.e||"").slice(0,300)}))}));
+}
+function myHome(){
+ const d=MY.load();
+ app.innerHTML=`<p class="crumb"><a href="#/">Trang chủ</a> / Từ vựng của tôi</p><h1>Từ vựng của tôi</h1><p class="sub">Tự tạo chủ đề, thêm từ mới rồi ôn bằng flashcard và bài kiểm tra. Dữ liệu được lưu ngay trên trình duyệt này.</p>`+
+ `<form class="box" id="nt"><b>Tạo chủ đề mới</b><div class="row"><input class="fi" id="tn" placeholder="Tên chủ đề, ví dụ: Email công việc" maxlength="60" required><button>Tạo chủ đề</button></div></form>`+
+ `<div class="grid">`+(d.length?d.map(t=>{const b=LS.get("my-"+t.id);return `<a class="card" href="#/my/${t.id}"><b>${esc(t.name)}</b><span class="meta">${t.words.length} từ</span>${b?`<div class="best">Điểm cao nhất: ${b.s}/${b.t}</div>`:""}</a>`}).join(""):`<p class="meta">Bạn chưa có chủ đề nào. Hãy tạo chủ đề đầu tiên ở trên.</p>`)+`</div>`+
+ `<h2>Sao lưu</h2><p class="sub">Dữ liệu chỉ nằm trên trình duyệt này. Hãy xuất file để sao lưu hoặc chuyển sang thiết bị khác, rồi nhập lại bằng nút bên dưới.</p><button class="g" id="ex">Xuất file JSON</button><button class="g" id="im">Nhập file JSON</button><input type="file" id="imf" accept=".json,application/json" hidden><div id="msg" class="meta" role="status"></div>`;
+ $("#nt").onsubmit=e=>{e.preventDefault();const name=$("#tn").value.trim();if(!name)return;const t={id:newId(),name:name.slice(0,60),words:[]};const d=MY.load();d.push(t);MY.save(d);location.hash="#/my/"+t.id};
+ $("#ex").onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(MY.load(),null,1)],{type:"application/json"}));a.download="tu-vung-cua-toi.json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+ $("#im").onclick=()=>$("#imf").click();
+ $("#imf").onchange=e=>{
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{
+   let x=null;try{x=myClean(JSON.parse(r.result))}catch(err){}
+   if(!x){$("#msg").textContent="File không hợp lệ. Hãy chọn file JSON đã xuất từ trang này.";return}
+   const d=MY.load();let add=0;
+   x.forEach(t=>{let c=d.find(y=>y.name===t.name);if(!c){c={id:newId(),name:t.name,words:[]};d.push(c)}
+    t.words.forEach(w=>{if(!c.words.some(v=>v.w.toLowerCase()===w.w.toLowerCase()&&v.m===w.m)){c.words.push(w);add++}})});
+   MY.save(d);myHome();$("#msg").textContent="Đã nhập "+add+" từ mới.";
+  };
+  r.readAsText(f);
+ };
+}
+function myTopic(id,mode){
+ const d=MY.load(),t=d.find(x=>x.id===id);
+ if(!t){location.hash="#/my";return}
+ const n=t.words.length,back=`<p><a href="#/my/${t.id}">← Quay lại chủ đề</a></p>`;
+ if(mode==="quiz"){
+  const ms=[...new Set(t.words.map(x=>x.m))];
+  if(ms.length<2){app.innerHTML=myHead(t)+back+`<p class="sub">Cần ít nhất 2 từ có nghĩa khác nhau để làm bài kiểm tra.</p>`;return}
+  const qs=shuffle(t.words).map(x=>{const o=shuffle([x.m,...shuffle(ms.filter(m=>m!==x.m)).slice(0,3)]);return Q(`Nghĩa của <b>${esc(x.w)}</b> là gì?`,o.map(esc),o.indexOf(x.m),`${x.w}${x.t?` (${x.t})`:""}: ${x.m}.${x.e?" Ví dụ: "+x.e:""}`)});
+  app.innerHTML=myHead(t)+back+`<h2>Kiểm tra</h2><div id="qb"></div>`;
+  quiz($("#qb"),qs,"my-"+t.id);return;
+ }
+ if(mode==="flash"){
+  if(!n){app.innerHTML=myHead(t)+back+`<p class="sub">Chủ đề chưa có từ nào. Hãy thêm từ trước khi ôn flashcard.</p>`;return}
+  let deck=t.words.slice(),i=0,show=false;
+  app.innerHTML=myHead(t)+back+`<h2>Flashcard</h2><div id="fc"></div>`;
+  const draw=()=>{
+   const x=deck[i];
+   $("#fc").innerHTML=`<div class="fcard" id="card" tabindex="0" role="button" aria-label="Lật thẻ">${show?`<div><b>${esc(x.m)}</b>${x.e?`<div class="ex">${esc(x.e)}</div>`:""}</div>`:`<div><span class="big">${esc(x.w)}</span>${x.t?` <i>(${esc(x.t)})</i>`:""}</div>`}</div><p class="meta">Thẻ ${i+1} / ${deck.length}. Bấm vào thẻ để lật.</p><button class="g" id="pv">← Trước</button><button id="nx">Sau →</button><button class="g" id="sh">Xáo trộn</button><button class="g" id="sd">🔊 Nghe</button>`;
+   const flip=()=>{show=!show;draw();$("#card").focus()};
+   $("#card").onclick=flip;
+   $("#card").onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();flip()}};
+   $("#pv").onclick=()=>{i=(i-1+deck.length)%deck.length;show=false;draw()};
+   $("#nx").onclick=()=>{i=(i+1)%deck.length;show=false;draw()};
+   $("#sh").onclick=()=>{deck=shuffle(deck);i=0;show=false;draw()};
+   $("#sd").onclick=()=>say([x.w],.9);
+  };
+  draw();return;
+ }
+ app.innerHTML=myHead(t)+`<p><a href="#/my">← Quay lại danh sách</a></p><p><a class="btn" href="#/my/${t.id}/flash">Flashcard</a><a class="btn" href="#/my/${t.id}/quiz">Làm bài kiểm tra</a><button class="g" id="rn">Đổi tên</button><button class="g" id="dt">Xóa chủ đề</button></p>`+
+ `<form class="box" id="nw"><b>Thêm từ mới</b><div class="row"><input class="fi" id="fw" placeholder="Từ tiếng Anh" maxlength="80" required><select class="fi" id="ft" aria-label="Loại từ"><option value="">Loại từ</option><option>n</option><option>v</option><option>adj</option><option>adv</option><option>prep</option></select></div><div class="row"><input class="fi" id="fm" placeholder="Nghĩa tiếng Việt" maxlength="200" required></div><div class="row"><input class="fi" id="fe" placeholder="Câu ví dụ (không bắt buộc)" maxlength="300"></div><button>Thêm từ</button></form>`+
+ `<h2>${n} từ</h2>`+(n?`<div class="grid">`+t.words.map((x,k)=>`<div class="w"><button class="x" style="float:right" data-del="${k}" aria-label="Xóa từ ${esc(x.w)}">✕</button><b>${esc(x.w)}</b>${x.t?` <i>(${esc(x.t)})</i>`:""} <button class="sp" data-w="${esc(x.w)}" aria-label="Nghe phát âm ${esc(x.w)}">🔊</button><div>${esc(x.m)}</div>${x.e?`<div class="ex">${esc(x.e)}</div>`:""}</div>`).join("")+`</div>`:`<p class="meta">Chưa có từ nào. Hãy thêm từ đầu tiên ở trên.</p>`);
+ $("#nw").onsubmit=e=>{e.preventDefault();const w=$("#fw").value.trim(),m=$("#fm").value.trim();if(!w||!m)return;t.words.push({w,t:$("#ft").value,m,e:$("#fe").value.trim()});MY.save(d);myTopic(id);$("#fw").focus()};
+ document.querySelectorAll("[data-del]").forEach(b=>b.onclick=()=>{t.words.splice(+b.dataset.del,1);MY.save(d);myTopic(id)});
+ $("#rn").onclick=()=>{const v=prompt("Tên mới cho chủ đề:",t.name);if(v&&v.trim()){t.name=v.trim().slice(0,60);MY.save(d);myTopic(id)}};
+ $("#dt").onclick=()=>{if(confirm(`Xóa chủ đề "${t.name}" và toàn bộ ${n} từ trong đó?`)){MY.save(d.filter(x=>x!==t));try{localStorage.removeItem("hub:my-"+t.id)}catch(e){}location.hash="#/my"}};
+}
+/* ===== Bài giảng: danh sách đọc từ lessons.json (giáo viên chỉnh file này trên GitHub) ===== */
+let lessonTok=0;
+const OFFICE=["ppt","pptx","pps","ppsx","doc","docx","xls","xlsx"];
+function lessonFile(f){
+ if(!f||typeof f!=="object")return null;
+ let u;try{u=new URL(String(f.file||f.url||""),location.href)}catch(e){return null}
+ if(u.protocol!=="https:"&&u.protocol!=="http:"&&u.protocol!==location.protocol)return null;
+ const ext=String(f.type||(u.pathname.match(/\.(\w+)$/)||[])[1]||"").toLowerCase();
+ const web=/^https?:$/.test(u.protocol),office=OFFICE.includes(ext)&&web;
+ return{
+  name:String(f.name||u.pathname.split("/").pop()||"Tài liệu"),
+  href:u.href,
+  view:office?"https://view.officeapps.live.com/op/view.aspx?src="+encodeURIComponent(u.href):u.href,
+  icon:ext==="pdf"?"📄":/^pp/.test(ext)?"📊":OFFICE.includes(ext)?"📝":"🔗",
+  down:ext==="pdf"||OFFICE.includes(ext)
+ };
+}
+async function lessonsPage(flt){
+ const tok=++lessonTok,keys=Object.keys(D),f=keys.includes(flt)?flt:"";
+ const head=`<p class="crumb"><a href="#/">Trang chủ</a> / Bài giảng</p><h1>Bài giảng</h1><p class="sub">Slide và tài liệu của từng buổi học do giáo viên cập nhật. Bấm "Xem" để mở ngay hoặc "Tải về" để lưu vào máy.</p><div class="tabs">`+
+  [["","Tất cả"],...keys.map(k=>[k,D[k].n])].map(([k,t])=>`<a class="${k===f?"on":""}" href="#/lessons${k?"/"+k:""}">${t}</a>`).join("")+`</div>`;
+ app.innerHTML=head+`<p class="meta" role="status">Đang tải danh sách bài giảng...</p>`;
+ let data=[];
+ try{const r=await fetch("lessons.json",{cache:"no-store"});if(r.ok){const j=await r.json();data=Array.isArray(j)?j:Array.isArray(j&&j.lessons)?j.lessons:[]}}catch(e){}
+ if(tok!==lessonTok)return;
+ const items=data.filter(l=>l&&typeof l.title==="string"&&(!f||!l.level||l.level===f)).sort((a,b)=>(+b.buoi||0)-(+a.buoi||0));
+ const manager=`<details class="box"><summary style="cursor:pointer;font-weight:700">＋ Giáo viên: thêm bài giảng / tải tệp</summary>
+ <p class="meta">Tạo bài giảng và xuất lessons.json. GitHub Pages là website tĩnh nên biểu mẫu không thể tự ghi file lên GitHub. Sau khi xuất JSON, hãy tải tài liệu lên thư mục assets/lessons/ trong repository.</p>
+ <form id="lessonForm"><div class="row"><input class="fi" id="lessonTitle" maxlength="160" placeholder="Tên bài giảng" required><input class="fi" id="lessonBuoi" type="number" min="1" placeholder="Buổi số"></div>
+ <div class="row"><select class="fi" id="lessonLevel"><option value="">Chưa phân cấp độ</option><option value="starter">Starter</option><option value="intermediate">Intermediate</option><option value="advanced">Advanced</option></select><input class="fi" id="lessonDate" placeholder="Ngày học"></div>
+ <textarea class="fi" id="lessonNote" rows="2" maxlength="1000" placeholder="Ghi chú bài giảng"></textarea>
+ <p><label for="lessonFiles"><b>Chọn file tài liệu</b> (PDF, PowerPoint, Word, Excel...)</label><br><input id="lessonFiles" type="file" multiple accept=".pdf,.ppt,.pptx,.pps,.ppsx,.doc,.docx,.xls,.xlsx,.txt,.mp3,.mp4"></p>
+ <div id="lessonFileNames" class="meta">Chưa chọn tệp.</div><button type="submit">Thêm bài giảng</button><button type="button" class="g" id="downloadLessons">Tải lessons.json</button><div id="lessonMsg" class="meta" role="status"></div></form></details>`;
+ app.innerHTML=head+manager+(items.length?items.map(l=>{
+  const fs=(Array.isArray(l.files)?l.files:[]).map(lessonFile).filter(Boolean),lv=typeof l.level==="string"&&keys.includes(l.level)?D[l.level]:null;
+  return `<div class="box"><b>${l.buoi?`Buổi ${esc(l.buoi)} – `:""}${esc(l.title)}</b>${lv?`<span class="tag">${lv.n}</span>`:""}${l.date?` <span class="meta">· ${esc(l.date)}</span>`:""}${l.note?`<p class="sub" style="margin:6px 0 8px">${esc(l.note)}</p>`:""}`+
+   (fs.length?fs.map(x=>`<div class="frow"><span>${x.icon} ${esc(x.name)}</span><a class="btn" href="${esc(x.view)}" target="_blank" rel="noopener">Xem</a>${x.down?`<a class="btn g" href="${esc(x.href)}" download>Tải về</a>`:""}</div>`).join(""):`<p class="meta" style="margin:6px 0 0">Chưa có tệp đính kèm.</p>`)+`</div>`;
+ }).join(""):`<p class="meta">Chưa có bài giảng nào. Giáo viên sẽ cập nhật sau mỗi buổi học.</p>`);
+ const exportData=data.slice(), filesInput=$("#lessonFiles"), fileNames=$("#lessonFileNames"), form=$("#lessonForm"), msg=$("#lessonMsg");
+ filesInput.onchange=()=>{fileNames.textContent=filesInput.files.length?[...filesInput.files].map(x=>x.name).join(" · "):"Chưa chọn tệp.";};
+ form.onsubmit=e=>{
+  e.preventDefault();const title=$("#lessonTitle").value.trim(), selected=[...filesInput.files];
+  if(!title){msg.textContent="Hãy nhập tên bài giảng.";return}
+  if(!selected.length){msg.textContent="Hãy chọn ít nhất một tệp tài liệu.";return}
+  const files=selected.map(file=>({name:file.name,file:"assets/lessons/"+file.name,type:(file.name.split(".").pop()||"").toLowerCase()}));
+  exportData.push({title,buoi:$("#lessonBuoi").value?Number($("#lessonBuoi").value):"",level:$("#lessonLevel").value,date:$("#lessonDate").value.trim(),note:$("#lessonNote").value.trim(),files});
+  msg.textContent="Đã thêm vào danh sách xuất ("+exportData.length+" bài). Nhấn Tải lessons.json.";
+  form.reset();fileNames.textContent="Chưa chọn tệp.";
+ };
+ $("#downloadLessons").onclick=()=>{
+  const blob=new Blob([JSON.stringify(exportData,null,2)],{type:"application/json;charset=utf-8"});
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="lessons.json";a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+  msg.textContent="Đã tạo lessons.json. Hãy thay file này trong GitHub và tải tài liệu lên assets/lessons/.";
+ };
+}
+document.addEventListener("click",e=>{const b=e.target.closest(".sp");if(b)say([b.dataset.w],.9)});
+window.addEventListener("hashchange",route);route();
+</script>
+</body>
+</html>
