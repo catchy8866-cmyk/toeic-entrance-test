@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TOEIC cùng Hà Anh – Luyện Listening, Reading và Từ vựng</title>
+<meta name="description" content="Luyện thi TOEIC miễn phí theo 3 cấp độ: Starter, Intermediate, Advanced. Listening, Reading và từ vựng theo chủ đề.">
+<style>
+:root{--bg:#eef2f1;--card:#fff;--tx:#17252a;--mut:#5a6b70;--bd:#d3dcdb;--ac:#17252a;--ok:#14803c;--okbg:#e2f4e8;--no:#b42318;--nobg:#fdeceb;--sel:#e9f1f0}
+@media (prefers-color-scheme:dark){:root{--bg:#10191c;--card:#182428;--tx:#e6eeee;--mut:#98acae;--bd:#2d3f43;--ac:#e6eeee;--ok:#5fd08a;--okbg:#16301f;--no:#ff8a80;--nobg:#3a1f1d;--sel:#1f3236}}
+body[data-lv=starter]{--ac:#0b7f82}
+body[data-lv=intermediate]{--ac:#3d5a98}
+body[data-lv=advanced]{--ac:#b3401e}
+@media (prefers-color-scheme:dark){body[data-lv=starter]{--ac:#4cc9cc}body[data-lv=intermediate]{--ac:#8fb0f5}body[data-lv=advanced]{--ac:#ff9a73}}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.wrap{max-width:900px;margin:0 auto;padding:0 18px}
+header{border-bottom:1px solid var(--bd);background:var(--card)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}
+.brand{font:700 1.15rem Charter,"Iowan Old Style",Georgia,serif;color:var(--tx);text-decoration:none}
+header nav a{color:var(--mut);text-decoration:none;margin-left:16px;font-size:.95rem}
+header nav a:hover{color:var(--ac)}
+h1,h2{font-family:Charter,"Iowan Old Style",Georgia,serif;line-height:1.25}
+h1{font-size:clamp(1.8rem,5vw,2.5rem);margin:.4em 0 .2em}
+h2{font-size:1.35rem;margin:1.4em 0 .4em}
+.sub{color:var(--mut);margin:0 0 18px;max-width:60ch}
+main{padding:22px 0 50px}
+.crumb{font-size:.9rem;color:var(--mut)}
+.crumb a{color:var(--mut)}
+.levels{display:grid;gap:14px;margin-top:20px}
+.lv{display:block;background:var(--card);border:1px solid var(--bd);border-left:8px solid var(--c);border-radius:10px;padding:18px 20px;text-decoration:none;color:var(--tx)}
+.lv:hover{border-color:var(--c)}
+.lv h2{margin:0 0 4px;color:var(--c)}
+.lv p{margin:0;color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.card{display:block;background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;text-decoration:none;color:var(--tx)}
+a.card:hover{border-color:var(--ac)}
+.card b{display:block;margin-bottom:2px}
+.meta{color:var(--mut);font-size:.9rem}
+.best{color:var(--ok);font-size:.9rem}
+.tabs{display:flex;gap:6px;margin:16px 0;border-bottom:1px solid var(--bd);flex-wrap:wrap}
+.tabs a{padding:9px 16px;text-decoration:none;color:var(--mut);border-bottom:3px solid transparent;margin-bottom:-1px}
+.tabs a.on{color:var(--ac);border-color:var(--ac);font-weight:600}
+.box{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;margin:12px 0}
+.pass{white-space:pre-line;font-family:Charter,Georgia,serif;font-size:1.02rem}
+.q{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px 16px;margin:12px 0}
+.q p{margin:0 0 8px}
+.q label{display:block;padding:8px 10px;border:1px solid var(--bd);border-radius:8px;margin:6px 0;cursor:pointer}
+.q label:hover,.q label:has(input:checked){background:var(--sel);border-color:var(--ac)}
+.q input{margin-right:8px}
+.q label.ok{background:var(--okbg);border-color:var(--ok)}
+.q label.no{background:var(--nobg);border-color:var(--no)}
+.ex{margin-top:6px;font-size:.92rem;color:var(--mut)}
+button,.btn{background:var(--ac);color:#fff;border:0;border-radius:8px;padding:10px 18px;font-size:1rem;cursor:pointer;text-decoration:none;display:inline-block;margin:4px 8px 4px 0}
+body:not([data-lv]) .btn,body:not([data-lv]) button{background:#17252a;color:#fff}
+button.g,.btn.g{background:transparent;color:var(--ac);border:1.5px solid var(--ac)}
+body:not([data-lv]) .btn.g{color:var(--tx);border-color:var(--tx);background:transparent}
+button.sp{background:transparent;color:var(--ac);padding:0 6px;margin:0;font-size:1rem}
+select{padding:9px;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font-size:1rem}
+.w{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:12px 14px}
+.w i{color:var(--mut)}
+.score{font:700 1.6rem Charter,Georgia,serif;margin:10px 0 2px}
+footer{border-top:1px solid var(--bd);padding:22px 0 40px;color:var(--mut);font-size:.9rem;text-align:center}
+:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.fi{flex:1;min-width:140px;padding:10px;border-radius:8px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font-size:1rem;font-family:inherit}
+button.x{background:transparent;color:var(--no);padding:0 6px;margin:0;font-size:1.1rem}
+.fcard{background:var(--card);border:2px solid var(--ac);border-radius:14px;min-height:180px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;cursor:pointer;font-size:1.25rem;margin:12px 0}
+.fcard .big{font:700 2rem Charter,Georgia,serif}
+.frow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:8px 0;border-top:1px solid var(--bd)}
+.frow span{flex:1;min-width:160px;overflow-wrap:anywhere}
+.frow .btn{margin:0;padding:7px 14px;font-size:.95rem}
+.tag{display:inline-block;font-size:.8rem;padding:1px 8px;border-radius:999px;border:1px solid var(--bd);color:var(--mut);margin-left:6px}
+
+/* Vietnamese font/encoding fix */
+:root { font-synthesis: none; }
+html { -webkit-text-size-adjust: 100%; }
+body, button, input, textarea, select, option {
+  font-family: "Be Vietnam Pro", Arial, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Be Vietnam Pro", Arial, sans-serif;
+  font-synthesis: none;
+}
+
+
+/* TOEIC WORLD — playful 3D toy-land theme */
+:root{--bg:#dff4ff;--card:#fffdfc;--tx:#35457c;--mut:#6477a5;--bd:#d8e3ff;--ac:#7b5be7;--ok:#168d69;--okbg:#ddfff0;--no:#cf4264;--nobg:#fff0f2;--sel:#f0ebff;--sky:#8dd7ff}
+@media(prefers-color-scheme:dark){:root{--bg:#eaf7ff;--card:#fffdfc;--tx:#35457c;--mut:#6477a5;--bd:#d8e3ff;--ac:#7b5be7;--ok:#168d69;--okbg:#ddfff0;--no:#cf4264;--nobg:#fff0f2;--sel:#f0ebff}}
+body{background:linear-gradient(#b8e5ff 0,#e9f8ff 360px,#f5fff0 720px,#fff7fc 100%);color:var(--tx);font-family:'Be Vietnam Pro',system-ui,sans-serif;line-height:1.65}
+.wrap{max-width:1180px;padding:0 22px}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border:0;box-shadow:0 5px 22px #627ac51c}
+header .wrap{padding-top:13px;padding-bottom:13px}
+.brand{font-family:inherit;font-size:1.22rem;font-weight:900;letter-spacing:-.5px;color:#7650d8}
+.brand:before{content:'🐰 ';font-size:1.45em;vertical-align:middle}
+header nav{display:flex;gap:7px;flex-wrap:wrap}
+header nav a{margin:0;padding:8px 13px;border-radius:999px;color:#58699e;font-weight:700;font-size:.9rem}
+header nav a:hover{background:#f0e9ff;color:#7047d5}
+h1,h2{font-family:'Be Vietnam Pro',sans-serif;font-weight:900;letter-spacing:-.5px}
+h1{font-size:clamp(1.9rem,4vw,3.1rem);color:#6747c7;text-shadow:0 2px #fff;margin:.25em 0 .18em}
+h2{color:#4c5eab;font-size:1.45rem}
+main{padding:25px 0 52px}
+.sub{color:#6275a4;max-width:68ch}
+.levels{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:20px}
+.lv{position:relative;overflow:hidden;min-height:245px;border:2px solid color-mix(in srgb,var(--c) 25%,white);border-left:2px solid color-mix(in srgb,var(--c) 25%,white);border-radius:28px;padding:23px 22px;background:linear-gradient(155deg,#fff 8%,color-mix(in srgb,var(--c) 11%,white));box-shadow:0 9px 0 color-mix(in srgb,var(--c) 14%,white),0 16px 28px #6c86bd20;transition:transform .2s,box-shadow .2s}
+.lv:before{content:'✨';position:absolute;right:18px;top:10px;font-size:1.4rem;opacity:.8}
+.lv:after{content:none!important}
+.lv:hover{transform:translateY(-5px);box-shadow:0 13px 0 color-mix(in srgb,var(--c) 14%,white),0 22px 32px #6c86bd27}
+.lv h2{color:var(--c);font-size:1.6rem;margin:0 0 8px}
+.lv p{max-width:90%;color:#596b9c}
+.lv .meta{font-size:.84rem;color:#7784ac}
+.lv:nth-child(1){--c:#21b98a}.lv:nth-child(1):after{content:'🐰'}
+.lv:nth-child(2){--c:#5684f6}.lv:nth-child(2):after{content:'🐱'}
+.lv:nth-child(3){--c:#ff785f}.lv:nth-child(3):after{content:'🐻'}
+.lv:nth-child(4):after{content:'📚'}.lv:nth-child(5):after{content:'🌟'}.lv:nth-child(6):after{content:'🦊'}
+.levels .lv:nth-child(n+4){min-height:140px}
+.card,.box,.q,.w{border:1px solid #e3e8ff;border-radius:22px;background:rgba(255,255,255,.92);box-shadow:0 7px 20px #6d80bd12;padding:18px 20px}
+a.card:hover{border-color:#a89aff;transform:translateY(-2px)}
+.tabs{border:0;gap:8px;margin:18px 0}
+.tabs a{border:1px solid #e3ddff;border-radius:999px;background:#fff;padding:9px 16px;margin:0;color:#6575a7;font-weight:700}
+.tabs a.on{background:linear-gradient(135deg,#8f7aff,#b78cff);color:white;border-color:transparent;box-shadow:0 4px 0 #d7c8ff}
+.q{margin:16px 0;padding:19px 21px}
+.q label{border:1.5px solid #e3e7f7;border-radius:15px;padding:11px 13px;background:#fff;transition:background .15s,border .15s}
+.q label:hover,.q label:has(input:checked){background:#f3efff;border-color:#a795ff}
+.q label.ok{background:#e4fff3;border-color:#3dc99b}.q label.no{background:#fff0f2;border-color:#ef8ba1}
+button,.btn{background:linear-gradient(135deg,#ff83b6,#ff6f9f);color:#fff;border:0;border-radius:999px;padding:12px 21px;font-weight:800;box-shadow:0 5px 0 #edb5d0,0 9px 18px #e97ca333;transition:transform .15s,filter .15s}
+button:hover,.btn:hover{filter:saturate(1.1);transform:translateY(-2px)}
+button.g,.btn.g{background:#fff;color:#7656d9;border:1px solid #dcd3ff;box-shadow:0 4px 0 #eee7ff}
+body:not([data-lv]) .btn,body:not([data-lv]) button{background:linear-gradient(135deg,#8a7aff,#b28bff);color:#fff}
+body:not([data-lv]) .btn.g{background:#fff;color:#7656d9;border-color:#dcd3ff}
+select,.fi{border:1.5px solid #dce4ff;border-radius:14px;background:#fff;color:#35457c;padding:11px 13px}
+.fcard{border:2px solid #cfc4ff;border-radius:28px;background:linear-gradient(145deg,#fff,#f3efff);box-shadow:0 8px 0 #e4dcff;min-height:200px}
+.score{font-family:inherit;color:#7553d6}
+footer{background:#ffffff9c;border:0;color:#7080a8;padding:25px 0 38px}
+.crumb a{color:#8065d8}
+:focus-visible{outline:3px solid #ff9fc4;outline-offset:3px}
+/* homepage toy world scene */
+.world-hero{position:relative;isolation:isolate;overflow:hidden;border-radius:32px;min-height:370px;padding:35px clamp(20px,4vw,48px);margin:0 0 28px;background:linear-gradient(180deg,#80ccff 0%,#c9efff 54%,#eaffdb 55%,#a9e987 100%);box-shadow:0 10px 0 #d6e8ff,0 20px 35px #6683bd20}
+.world-hero:before{content:'☁️　　　☁️　　　　　☁️';position:absolute;z-index:-1;left:0;right:0;top:20px;font-size:2.6rem;letter-spacing:12px;opacity:.8;white-space:nowrap}
+.world-hero:after{content:'🌳　🌲　🌼　🌳　🌷　🌲　🌳　🌼';position:absolute;z-index:-1;left:0;right:0;bottom:4px;font-size:2.5rem;white-space:nowrap;opacity:.95}
+.world-title{position:relative;max-width:55%;z-index:2}
+.world-title .eyebrow{display:inline-block;background:#fff;border:2px solid #fff0a8;border-radius:999px;padding:6px 14px;color:#e17c48;font-weight:900;box-shadow:0 4px 0 #f3d8a8}
+.world-title h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.02;margin:18px 0 12px;color:#7550d5;text-shadow:0 4px #fff,0 7px #c9b7ff}
+.world-title p{font-weight:700;color:#4c6597}
+.world-mascots{position:absolute;right:3%;bottom:32px;font-size:clamp(4rem,9vw,7.5rem);filter:drop-shadow(0 10px 4px #528b6d38);white-space:nowrap}
+.world-station{position:relative;z-index:2;position:absolute;right:10%;top:27px;background:#fff8d8;border:5px solid #fff;border-radius:22px;padding:13px 22px;text-align:center;color:#e67c5a;font-weight:900;font-size:1.2rem;box-shadow:0 8px 0 #e8c6a0;transform:rotate(2deg)}
+.world-station small{display:block;font-size:.7rem;color:#7783ac}
+.world-track{position:absolute;right:2%;bottom:28px;width:45%;height:50px;border-radius:50%;border:12px solid #ff9eb9;border-top-color:#a88bff;border-bottom-color:#ffd56f;transform:rotate(-9deg);opacity:.95;z-index:-1}
+.world-tag{display:inline-block;background:#fff;border-radius:15px;padding:8px 13px;color:#6d59c5;font-weight:800;box-shadow:0 4px 0 #e7ddff;margin:4px}
+.home-shortcuts{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:22px 0}
+.shortcut{display:block;text-align:center;padding:17px 8px;background:#fff;border:1px solid #e6e5ff;border-radius:22px;color:#5866a1;text-decoration:none;font-weight:800;box-shadow:0 5px 0 #e9e5ff}
+.shortcut span{display:block;font-size:2rem;margin-bottom:4px}
+.shortcut:hover{transform:translateY(-3px);background:#fff8fc}
+@media(max-width:760px){.wrap{padding:0 14px}header .wrap{align-items:flex-start}.brand{font-size:1rem}header nav{gap:3px}header nav a{font-size:.78rem;padding:7px 9px}.levels{grid-template-columns:1fr}.lv{min-height:200px}.levels .lv:nth-child(n+4){min-height:130px}.world-hero{min-height:470px;padding:25px 20px}.world-title{max-width:100%}.world-title h1{font-size:2.6rem}.world-station{position:relative;z-index:2;right:12px;top:auto;bottom:140px;font-size:.9rem;padding:8px 12px}.world-mascots{right:8px;bottom:28px;font-size:4.2rem}.world-track{width:70%;bottom:50px}.home-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr))}.home-shortcuts .shortcut:last-child{grid-column:span 2}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;scroll-behavior:auto!important}}
+
+
+/* Animated 3D toy mascots — CSS-built characters, no emoji characters */
+.world-hero{min-height:430px}
+.world-mascots{display:flex;align-items:flex-end;gap:clamp(2px,1.4vw,20px);right:4%;bottom:38px;white-space:normal;filter:none;z-index:3}
+.toy{--fur:#fff;--ear:#ffb8d1;position:relative;display:inline-block;width:clamp(76px,10vw,126px);height:clamp(104px,13vw,160px);flex:0 0 auto;transform-origin:50% 100%;animation:toyBob 2.2s ease-in-out infinite;filter:drop-shadow(0 12px 6px #497d6c35);perspective:400px}
+.toy:nth-child(2){animation-delay:-.5s}.toy:nth-child(3){animation-delay:-1s}.toy:nth-child(4){animation-delay:-1.5s}
+.toy .body{position:absolute;width:68%;height:48%;left:16%;bottom:2%;border-radius:48% 48% 38% 38%;background:radial-gradient(circle at 32% 20%,#fff 0 7%,transparent 28%),linear-gradient(135deg,#fff 0%,var(--fur) 48%,color-mix(in srgb,var(--fur),#9ba8cb 22%) 100%);box-shadow:inset -7px -8px 10px #6677a622,inset 5px 5px 9px #fff,0 5px 0 #8e9ab522;transform:rotateX(-5deg)}
+.toy .head{position:absolute;width:78%;height:53%;left:11%;top:18%;border-radius:47% 47% 44% 44%;background:radial-gradient(ellipse at 30% 24%,#fff 0 7%,transparent 30%),linear-gradient(145deg,#fff 0%,var(--fur) 60%,color-mix(in srgb,var(--fur),#9ba8cb 18%));box-shadow:inset -7px -7px 9px #6475a522,inset 5px 5px 8px #fff,0 5px 0 #8493b522;z-index:3;animation:headTilt 3.4s ease-in-out infinite}
+.toy .eye{position:absolute;width:10%;height:13%;top:48%;left:27%;border-radius:50%;background:radial-gradient(circle at 35% 28%,#fff 0 18%,#59415a 22% 100%);box-shadow:0 1px 2px #3d3159}.toy .eye.right{left:63%}
+.toy .cheek{position:absolute;width:17%;height:8%;top:62%;left:17%;border-radius:50%;background:#ff9db7aa;filter:blur(1px)}.toy .cheek.right{left:68%}
+.toy .mouth{position:absolute;left:47%;top:63%;width:9%;height:7%;border-bottom:2px solid #9b6179;border-radius:0 0 50% 50%}
+.toy .arm{position:absolute;z-index:4;top:62%;left:7%;width:23%;height:23%;border-radius:50%;background:linear-gradient(135deg,#fff,var(--fur));transform:rotate(30deg);box-shadow:inset -3px -3px 5px #7e89a522;animation:wave 1.5s ease-in-out infinite;transform-origin:80% 20%}.toy .arm.right{left:70%;transform:rotate(-30deg);animation-delay:-.7s}
+.toy.rabbit{--fur:#fffafc;--ear:#ffb5d0}.toy.rabbit .ear{position:absolute;z-index:1;top:-1%;left:18%;width:27%;height:40%;border-radius:55% 55% 45% 45%;background:linear-gradient(90deg,#fff,#fff);box-shadow:inset -5px -3px 5px #b7a6d455;transform:rotate(-18deg);animation:earWiggle 2.4s ease-in-out infinite}.toy.rabbit .ear:after{content:'';position:absolute;inset:12% 22%;border-radius:inherit;background:linear-gradient(#ffc5dc,#ff9fc7)}.toy.rabbit .ear.second{left:54%;top:-5%;transform:rotate(14deg);animation-delay:-1s}
+.toy.cat{--fur:#ffe3c5;--ear:#f6ad9c}.toy.cat .ear{position:absolute;z-index:2;top:13%;left:14%;width:28%;height:28%;background:linear-gradient(135deg,#fff0dc,#eab98f);clip-path:polygon(0 100%,18% 0,100% 80%);filter:drop-shadow(0 3px 1px #98775a44)}.toy.cat .ear.second{left:60%;transform:scaleX(-1)}
+.toy.bear{--fur:#c99166;--ear:#e7b18a}.toy.bear .ear{position:absolute;z-index:2;top:18%;left:12%;width:30%;height:30%;border-radius:50%;background:linear-gradient(135deg,#e6b58b,#ad714d);box-shadow:inset -4px -4px 5px #70432e44}.toy.bear .ear.second{left:58%}.toy.bear .muzzle{position:absolute;z-index:4;top:57%;left:34%;width:32%;height:22%;border-radius:50%;background:linear-gradient(135deg,#fff0d9,#eac8a5);box-shadow:inset -3px -3px 4px #a67a5933}.toy.bear .muzzle:after{content:'';position:absolute;top:26%;left:40%;width:20%;height:17%;border-radius:50%;background:#63463d}
+.toy.chick{--fur:#ffe77d;--ear:#f9b94c;width:clamp(65px,8vw,100px);height:clamp(85px,10vw,125px)}.toy.chick .head{height:60%;top:20%;border-radius:48% 52% 48% 48%}.toy.chick .beak{position:absolute;z-index:5;left:43%;top:58%;width:18%;height:12%;background:linear-gradient(#ffbd4d,#f58a34);clip-path:polygon(0 0,100% 0,50% 100%)}.toy.chick .wing{position:absolute;z-index:4;top:59%;left:5%;width:25%;height:22%;border-radius:50%;background:linear-gradient(135deg,#fff19a,#f6c94b);transform:rotate(30deg);animation:wave 1.3s ease-in-out infinite}
+.toy .shine{position:absolute;z-index:5;top:25%;left:22%;width:12%;height:6%;border-radius:50%;background:#fff9;transform:rotate(-30deg)}
+.lv .toy-card{position:absolute;right:12px;bottom:5px;width:88px;height:106px;transform:scale(.72);transform-origin:bottom right;pointer-events:none;filter:drop-shadow(0 7px 4px #596ba833)}
+.lv .toy-card .toy{width:100px;height:130px;animation-duration:1.8s}
+@keyframes toyBob{0%,100%{translate:0 0;rotate:-2deg}50%{translate:0 -13px;rotate:3deg}}
+@keyframes headTilt{0%,100%{rotate:0deg}35%{rotate:3deg}70%{rotate:-3deg}}
+@keyframes wave{0%,100%{rotate:0deg}50%{rotate:32deg}}
+@keyframes earWiggle{0%,100%{rotate:-18deg}50%{rotate:-28deg}}
+.world-cloud{position:absolute;z-index:1;width:100px;height:34px;border-radius:99px;background:linear-gradient(#fff,#f1f8ff);box-shadow:0 7px 10px #729fd322;opacity:.9;animation:cloudDrift 18s ease-in-out infinite}.world-cloud:before,.world-cloud:after{content:'';position:absolute;bottom:7px;border-radius:50%;background:inherit}.world-cloud:before{width:43px;height:43px;left:15px}.world-cloud:after{width:52px;height:52px;left:38px}.world-cloud.c1{top:48px;left:35%;scale:.8}.world-cloud.c2{top:100px;right:6%;scale:1.1;animation-delay:-7s}.world-cloud.c3{top:155px;left:4%;scale:.65;animation-delay:-12s}
+.world-balloon{position:absolute;z-index:0;top:28px;right:39%;width:42px;height:54px;border-radius:50% 50% 46% 46%;background:linear-gradient(90deg,#ff91c3 0 33%,#ffe37b 34% 66%,#8e8aff 67%);box-shadow:inset -7px -5px 9px #735ab433,0 7px 14px #5479a533;animation:balloonFloat 4s ease-in-out infinite}.world-balloon:after{content:'';position:absolute;left:23px;top:60px;height:60px;border-left:1px solid #fff;transform:rotate(7deg)}
+@keyframes cloudDrift{0%,100%{translate:0 0}50%{translate:30px 5px}}
+@keyframes balloonFloat{0%,100%{translate:0 0;rotate:-5deg}50%{translate:0 -20px;rotate:7deg}}
+@media(max-width:760px){.world-mascots{right:3%;bottom:22px;gap:0}.toy{width:70px;height:98px}.toy.chick{width:55px;height:78px}.world-hero{min-height:500px}.world-cloud.c1{left:45%}.world-balloon{right:3%;top:95px;width:34px;height:45px}}
+@media(prefers-reduced-motion:reduce){.toy,.toy *, .world-cloud,.world-balloon{animation:none!important}}
+
+
+/* Extra playful motion: roaming toy train, airplane, bouncing hearts and clouds */
+.site-motion{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:50;contain:strict}
+.roaming-train{position:absolute;left:-360px;top:22%;display:flex;align-items:center;gap:2px;white-space:nowrap;filter:drop-shadow(0 7px 5px #5c699b44);animation:trainAcross 27s linear infinite;will-change:transform}
+.roaming-train .engine,.roaming-train .car{position:relative;display:grid;place-items:center;width:55px;height:43px;border:3px solid #fff;border-radius:13px 13px 9px 9px;background:linear-gradient(145deg,#ffb1cf,#ff6fa8);box-shadow:inset -5px -5px 0 #d9578b33,0 5px 0 #e4d4ff;font-size:27px}
+.roaming-train .engine{background:linear-gradient(145deg,#fff2a7,#ffb64b);border-radius:15px 15px 7px 7px}
+.roaming-train .car:nth-child(2){background:linear-gradient(145deg,#c6f8e6,#5bd6b3)}.roaming-train .car:nth-child(3){background:linear-gradient(145deg,#d9d0ff,#9783ff)}
+.roaming-train .wheel{position:absolute;bottom:-8px;left:8px;width:12px;height:12px;border:3px solid white;border-radius:50%;background:#6c75a6;box-shadow:24px 0 #6c75a6;animation:wheelSpin .5s linear infinite}
+.roaming-plane{position:absolute;left:-100px;top:13%;font-size:clamp(28px,3vw,42px);filter:drop-shadow(0 5px 3px #6c8bc955);animation:planeAcross 19s linear infinite;animation-delay:-8s;will-change:transform}
+.roaming-plane:after{content:'♡ · · ·';position:absolute;right:28px;top:24px;font-size:14px;color:#ff8ab8;letter-spacing:4px;transform:rotate(-8deg)}
+.float-sticker{position:absolute;font-size:clamp(20px,2.4vw,34px);filter:drop-shadow(0 4px 3px #7d80b833);animation:stickerBounce 2.2s ease-in-out infinite;opacity:.95}
+.float-sticker.heart{color:#ff79ad}.float-sticker.cloud{font-size:clamp(25px,3vw,42px);filter:drop-shadow(0 5px 3px #8bb7d944)}
+.float-sticker.s1{left:5%;top:43%;animation-delay:-.4s}.float-sticker.s2{right:5%;top:34%;animation-delay:-1.2s}.float-sticker.s3{left:8%;bottom:15%;animation-delay:-.8s}.float-sticker.s4{right:9%;bottom:19%;animation-delay:-1.6s}.float-sticker.s5{left:47%;top:7%;animation-delay:-.2s}
+/* Turn decorative shortcut icons into bouncy stickers without changing labels or click targets */
+.home-shortcuts .shortcut span{display:inline-block;transform-origin:50% 75%;animation:iconHop 2.1s ease-in-out infinite}
+.home-shortcuts .shortcut:nth-child(2) span{animation-delay:-.4s}.home-shortcuts .shortcut:nth-child(3) span{animation-delay:-.8s}.home-shortcuts .shortcut:nth-child(4) span{animation-delay:-1.2s}.home-shortcuts .shortcut:nth-child(5) span{animation-delay:-1.6s}
+.world-tag:before{content:'♥ ';color:#ff83b7;display:inline-block;animation:heartBeat 1.3s ease-in-out infinite}
+@keyframes trainAcross{0%{transform:translateX(-380px) translateY(0)}8%{transform:translateX(8vw) translateY(-5px)}45%{transform:translateX(55vw) translateY(4px)}92%{transform:translateX(115vw) translateY(-3px)}100%{transform:translateX(calc(100vw + 390px)) translateY(0)}}
+@keyframes planeAcross{0%{transform:translate(-120px,35px) rotate(-5deg)}20%{transform:translate(22vw,-25px) rotate(2deg)}50%{transform:translate(55vw,22px) rotate(-3deg)}80%{transform:translate(88vw,-28px) rotate(3deg)}100%{transform:translate(calc(100vw + 140px),5px) rotate(-4deg)}}
+@keyframes wheelSpin{to{transform:rotate(360deg)}}
+@keyframes stickerBounce{0%,100%{transform:translateY(0) rotate(-7deg) scale(1)}50%{transform:translateY(-13px) rotate(8deg) scale(1.08)}}
+@keyframes iconHop{0%,80%,100%{transform:translateY(0) rotate(0)}88%{transform:translateY(-7px) rotate(-8deg)}94%{transform:translateY(0) rotate(8deg)}}
+@keyframes heartBeat{0%,100%{transform:scale(1)}15%{transform:scale(1.25)}30%{transform:scale(1)}45%{transform:scale(1.16)}60%{transform:scale(1)}}
+@media(max-width:760px){.roaming-train{top:31%;scale:.72;transform-origin:left center;animation-duration:22s}.roaming-plane{top:18%;animation-duration:16s}.float-sticker.s5{left:75%;top:7%}.float-sticker.s2{right:2%}}
+@media(prefers-reduced-motion:reduce){.roaming-train,.roaming-plane,.float-sticker,.home-shortcuts .shortcut span,.world-tag:before,.roaming-train .wheel{animation:none!important}}
+
+
+/* Custom hand-built SVG toy vehicles: glossy gradients, bevels and animated mechanics */
+.roaming-train{width:330px;height:100px;left:-360px;top:26%;display:block;filter:drop-shadow(0 12px 8px #6a79a633);animation:trainAcross 24s linear infinite;z-index:5}
+.train-svg{width:330px;height:100px;overflow:visible;transform-origin:50% 75%;animation:trainRock 1.15s ease-in-out infinite}
+.roaming-train .wheel-svg{transform-box:fill-box;transform-origin:center;animation:wheelSpin .7s linear infinite}
+.roaming-train .steam{animation:steamPuff 1.7s ease-out infinite;transform-origin:35px 4px}
+.roaming-plane{width:clamp(105px,13vw,170px);height:90px;left:-190px;top:10%;font-size:0;filter:drop-shadow(0 10px 7px #6c8bc944);animation:planeAcross 17s ease-in-out infinite;z-index:4}
+.plane-svg{width:100%;height:100%;overflow:visible;transform-origin:50% 50%;animation:planeRock 2.4s ease-in-out infinite}
+.plane-glint{stroke-dasharray:42;animation:glint 2.8s ease-in-out infinite}
+.roaming-plane:after{content:'♡  ·  ♡  ·';right:auto;left:-24px;top:61px;font-size:13px;color:#ff8ab8;letter-spacing:4px;animation:trailFade 1.8s ease-in-out infinite}
+@keyframes trainRock{0%,100%{transform:rotate(0) translateY(0)}25%{transform:rotate(.7deg) translateY(-2px)}75%{transform:rotate(-.7deg) translateY(1px)}}
+@keyframes planeRock{0%,100%{transform:rotate(-2deg) translateY(0)}50%{transform:rotate(3deg) translateY(-7px)}}
+@keyframes steamPuff{0%{opacity:0;transform:translate(0,8px) scale(.55)}35%{opacity:.8}100%{opacity:0;transform:translate(-18px,-22px) scale(1.8)}}
+@keyframes glint{0%,100%{stroke-dashoffset:42;opacity:.2}50%{stroke-dashoffset:0;opacity:1}}
+@keyframes trailFade{0%,100%{opacity:.15;transform:translateX(0)}50%{opacity:1;transform:translateX(-12px)}}
+/* Replace decorative emoji glyphs with CSS-drawn dimensional stickers where possible */
+.float-sticker{font-size:0;width:42px;height:42px;filter:drop-shadow(0 7px 4px #7d80b833)}
+.float-sticker:before{content:'';position:absolute;inset:5px;background:linear-gradient(145deg,#fff 0%,#ffb8d9 40%,#f36eaa 100%);clip-path:path('M 16 4 C 5 -4 -3 7 4 16 L 20 32 L 36 16 C 44 6 32 -4 23 4 L 20 7 Z');transform-origin:center;filter:drop-shadow(0 3px 0 #d94f91)}
+.float-sticker.s2:before,.float-sticker.s4:before{background:linear-gradient(145deg,#fff 0%,#fff 35%,#9ee7ff 100%);clip-path:ellipse(47% 34% at 50% 60%);box-shadow:0 -10px 0 -3px #fff,12px -3px 0 -2px #fff,-12px -3px 0 -2px #fff}
+.float-sticker.s3:before{background:linear-gradient(145deg,#fff8b8,#ffc84f);clip-path:polygon(50% 0%,62% 34%,100% 38%,72% 61%,80% 100%,50% 77%,20% 100%,28% 61%,0 38%,38% 34%)}
+.home-shortcuts .shortcut span{position:relative;display:inline-grid;place-items:center;width:44px;height:44px;font-size:0;border-radius:50%;background:linear-gradient(145deg,#fff,#e7eaff);box-shadow:inset 2px 2px 4px #fff, inset -4px -5px 7px #b9c5ed,0 5px 0 #c6c9e9,0 9px 12px #7d89bd2a}
+.home-shortcuts .shortcut span:before{content:'';width:22px;height:22px;display:block;background:linear-gradient(145deg,#fff 0%,#ffb8d9 45%,#f36eaa 100%);clip-path:path('M 11 4 C 3 -2 -3 7 3 13 L 11 21 L 20 12 C 27 5 18 -2 11 4 Z');filter:drop-shadow(0 2px 0 #d64c8b);animation:heartBeat 1.4s ease-in-out infinite}
+.home-shortcuts .shortcut:nth-child(2) span:before,.home-shortcuts .shortcut:nth-child(4) span:before{background:linear-gradient(#fff,#c4efff);clip-path:ellipse(48% 32% at 50% 62%);box-shadow:0 -8px 0 -2px #fff,10px -3px 0 -2px #fff,-10px -3px 0 -2px #fff}
+.home-shortcuts .shortcut:nth-child(3) span:before{background:linear-gradient(145deg,#fff8b8,#ffc84f);clip-path:polygon(50% 0%,62% 34%,100% 38%,72% 61%,80% 100%,50% 77%,20% 100%,28% 61%,0 38%,38% 34%)}
+.home-shortcuts .shortcut:nth-child(5) span:before{background:linear-gradient(145deg,#c9ffe8,#53cfa8);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 58%,79% 95%,50% 74%,21% 95%,32% 58%,2% 35%,39% 35%)}
+@media(max-width:760px){.roaming-train{top:34%;scale:.68;transform-origin:left center;animation-duration:20s}.roaming-plane{top:16%;animation-duration:15s}}
+@media(prefers-reduced-motion:reduce){.train-svg,.plane-svg,.roaming-train .wheel-svg,.roaming-train .steam,.plane-glint{animation:none!important}}
+
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="site-motion" aria-hidden="true">
+  <div class="roaming-train" aria-label="Tàu hỏa hoạt hình 3D">
+      <svg class="train-svg" viewBox="0 0 330 100" role="img" aria-label="Tàu hỏa pastel 3D">
+        <defs>
+          <linearGradient id="trainPink" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffb9d7"/><stop offset=".55" stop-color="#ff79b5"/><stop offset="1" stop-color="#db4d8d"/></linearGradient>
+          <linearGradient id="trainGold" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#fff4a9"/><stop offset="1" stop-color="#ffad42"/></linearGradient>
+          <linearGradient id="trainBlue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b6f3ff"/><stop offset="1" stop-color="#65bce8"/></linearGradient>
+          <linearGradient id="trainGlass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#efffff"/><stop offset="1" stop-color="#7bd4f5"/></linearGradient>
+          <filter id="trainShadow" x="-20%" y="-30%" width="140%" height="180%"><feDropShadow dx="0" dy="5" stdDeviation="3" flood-color="#6878a8" flood-opacity=".3"/></filter>
+        </defs>
+        <g filter="url(#trainShadow)" stroke="#fff" stroke-width="3" stroke-linejoin="round">
+          <path d="M8 57 L18 57 L18 35 Q18 29 25 29 L38 29 L38 15 Q38 10 44 10 L53 10 Q58 10 58 16 L58 29 L77 29 L77 62 L8 62Z" fill="url(#trainGold)"/>
+          <rect x="25" y="36" width="18" height="15" rx="4" fill="url(#trainGlass)"/>
+          <rect x="47" y="36" width="19" height="15" rx="4" fill="url(#trainGlass)"/>
+          <path d="M14 56 L77 56 L82 72 L8 72Z" fill="#f58c42" stroke="#ffe7a1"/>
+          <rect x="83" y="40" width="72" height="32" rx="8" fill="url(#trainPink)"/>
+          <path d="M87 40 L150 40 L155 49 L83 49Z" fill="#ffd8e9" stroke="none"/>
+          <rect x="93" y="46" width="19" height="16" rx="5" fill="url(#trainGlass)"/>
+          <rect x="119" y="46" width="19" height="16" rx="5" fill="url(#trainGlass)"/>
+          <rect x="164" y="40" width="72" height="32" rx="8" fill="url(#trainBlue)"/>
+          <path d="M168 40 L231 40 L236 49 L164 49Z" fill="#e5fbff" stroke="none"/>
+          <rect x="174" y="46" width="19" height="16" rx="5" fill="url(#trainGlass)"/>
+          <rect x="200" y="46" width="19" height="16" rx="5" fill="url(#trainGlass)"/>
+          <rect x="245" y="40" width="72" height="32" rx="8" fill="#cbbaff"/>
+          <path d="M249 40 L312 40 L317 49 L245 49Z" fill="#eee6ff" stroke="none"/>
+          <rect x="255" y="46" width="19" height="16" rx="5" fill="url(#trainGlass)"/>
+          <rect x="281" y="46" width="19" height="16" rx="5" fill="url(#trainGlass)"/>
+          <path d="M6 73 L319 73" stroke="#d1d7f6" stroke-width="5"/>
+          <g fill="#6874a8" stroke="#fff" stroke-width="3">
+            <circle class="wheel-svg" cx="26" cy="76" r="9"/><circle class="wheel-svg" cx="62" cy="76" r="9"/>
+            <circle class="wheel-svg" cx="101" cy="76" r="9"/><circle class="wheel-svg" cx="139" cy="76" r="9"/>
+            <circle class="wheel-svg" cx="183" cy="76" r="9"/><circle class="wheel-svg" cx="221" cy="76" r="9"/>
+            <circle class="wheel-svg" cx="264" cy="76" r="9"/><circle class="wheel-svg" cx="302" cy="76" r="9"/>
+          </g>
+          <g fill="#fff7cf" stroke="none"><circle cx="21" cy="58" r="3"/><circle cx="68" cy="58" r="3"/></g>
+        </g>
+        <g class="steam"><circle cx="29" cy="5" r="7" fill="#fff" opacity=".85"/><circle cx="19" cy="0" r="5" fill="#fff" opacity=".65"/></g>
+      </svg>
+    </div>
+  <div class="roaming-plane" aria-label="Máy bay hoạt hình 3D">
+      <svg class="plane-svg" viewBox="0 0 170 90" role="img" aria-label="Máy bay pastel 3D">
+        <defs>
+          <linearGradient id="planeBody" x1="0" y1="0" x2="0.8" y2="1"><stop stop-color="#fff"/><stop offset=".45" stop-color="#c9f6ff"/><stop offset="1" stop-color="#62bde9"/></linearGradient>
+          <linearGradient id="planeWing" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffdaef"/><stop offset="1" stop-color="#f07ab8"/></linearGradient>
+          <linearGradient id="planeTail" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffeaa0"/><stop offset="1" stop-color="#ffad49"/></linearGradient>
+          <filter id="planeShadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="5" stdDeviation="3" flood-color="#647da9" flood-opacity=".35"/></filter>
+        </defs>
+        <g filter="url(#planeShadow)" stroke-linejoin="round" stroke="#fff" stroke-width="2.5">
+          <path d="M12 42 L62 39 L91 8 Q96 3 102 7 L106 11 L91 38 L137 35 Q151 35 158 43 Q161 47 154 50 L91 54 L108 76 Q111 81 105 83 L98 84 L61 56 L19 57 Q7 56 7 49 Q7 44 12 42Z" fill="url(#planeBody)"/>
+          <path d="M59 41 L90 9 Q96 4 102 8 L106 12 L91 39Z" fill="url(#planeWing)"/>
+          <path d="M60 54 L98 82 L107 81 L91 53Z" fill="url(#planeWing)"/>
+          <path d="M20 42 L34 25 Q37 22 41 24 L48 29 L40 41Z" fill="url(#planeTail)"/>
+          <path d="M45 43 Q49 38 54 41 L57 44 L52 48 L45 48Z" fill="#69bfe8" stroke="none"/>
+          <path d="M68 42 Q72 38 77 41 L80 44 L75 48 L68 48Z" fill="#69bfe8" stroke="none"/>
+          <path d="M91 41 Q95 37 100 40 L103 43 L98 47 L91 47Z" fill="#69bfe8" stroke="none"/>
+          <path d="M16 51 Q55 56 88 49" fill="none" stroke="#ff8ebf" stroke-width="3"/>
+          <circle cx="31" cy="46" r="3" fill="#fff" stroke="none"/>
+        </g>
+        <path class="plane-glint" d="M29 35 Q57 28 72 30" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".9"/>
+      </svg>
+    </div>
+  <span class="float-sticker heart s1">♥</span><span class="float-sticker cloud s2">☁</span><span class="float-sticker heart s3">♡</span><span class="float-sticker cloud s4">☁</span><span class="float-sticker heart s5">♥</span>
+</div>
+
+<header><div class="wrap">
+ <a class="brand" href="#/">TOEIC cùng Hà Anh</a>
+ <nav><a href="#/">Cấp độ</a><a href="#/library">Kho ôn tập</a><a href="#/lessons">Bài giảng</a><a href="#/my">Từ vựng của tôi</a><a href="test.html">Test đầu vào</a></nav>
+</div></header>
+<main><div class="wrap" id="app"></div></main>
+<footer><div class="wrap">Bài luyện tập do Hà Anh biên soạn. Chưa biết bắt đầu từ cấp nào? Hãy làm <a href="test.html" style="color:inherit">test đầu vào</a>.</div></footer>
+<script>
+const Q=(q,o,a,e)=>({q,o,a,e});
+const D={
+starter:{n:"Starter",d:"Dành cho người mới bắt đầu (khoảng A1–A2): hội thoại, thông báo và email ngắn, từ vựng công việc hằng ngày.",c:"#0b7f82",
+L:[
+{t:"Đặt phòng họp",s:["M: Hi Anna, can I book the meeting room for tomorrow?","W: Sure. What time do you need it?","M: From two to four in the afternoon. We have a meeting with a client.","W: The room is free then. I'll put your name on the schedule.","M: Thank you. Could you also order some coffee?","W: Of course. For how many people?","M: Six people."],
+ q:[Q("What does the man want to do?",["Book a meeting room","Cancel a meeting","Meet a client at a cafe","Order lunch"],0,"Anh ấy hỏi: 'book the meeting room'."),
+    Q("What time is the meeting?",["10 a.m. to 12 p.m.","2 p.m. to 4 p.m.","4 p.m. to 6 p.m.","6 p.m. to 8 p.m."],1,"'From two to four in the afternoon'."),
+    Q("How many people need coffee?",["Four","Five","Six","Seven"],2,"'Six people'.")]},
+{t:"Thông báo ở siêu thị",s:["Attention, shoppers. Fresh Mart will close at nine o'clock tonight. Today only, all fruit is half price until eight o'clock. Please bring your shopping to the cashier before closing. Thank you for shopping with us."],
+ q:[Q("Where is this announcement being made?",["At an airport","At a hotel","At a supermarket","At a school"],2,"'Fresh Mart', 'shoppers', 'cashier' → siêu thị."),
+    Q("What is half price today?",["Bread","Fruit","Milk","Coffee"],1,"'all fruit is half price'."),
+    Q("What time does the store close?",["8:00","10:00","6:00","9:00"],3,"'close at nine o'clock'.")]}
+],
+R:[
+{t:"Thông báo văn phòng",p:"OFFICE NOTICE\nStarting Monday, the office will open at 8:30 a.m. instead of 9:00 a.m. Please arrive on time. Lunch break is from 12:00 to 1:00 p.m. If you are sick, call Ms. Park before 8:00 a.m.",
+ q:[Q("What is changing on Monday?",["The lunch break","The opening time","Ms. Park's job","The office address"],1,"Giờ mở cửa đổi từ 9:00 sang 8:30."),
+    Q("When is lunch break?",["11:00 to 12:00","1:00 to 2:00","2:00 to 3:00","12:00 to 1:00"],3,"'from 12:00 to 1:00 p.m.'."),
+    Q("Who should sick employees call?",["Mr. Lee","The doctor","Ms. Park","The manager"],2,"'call Ms. Park before 8:00 a.m.'.")]},
+{t:"Email thăm văn phòng",p:"Hi Tom,\nI will visit your office on Thursday. My flight arrives at 10:00 a.m., so I can be there at noon. Can we have lunch together? After lunch, I'd like to see the new product.\nBest,\nLinda",
+ q:[Q("Why is Linda writing?",["To plan a visit","To buy a product","To ask for a job","To change her flight"],0,"Cô ấy báo sẽ đến thăm văn phòng."),
+    Q("When will Linda arrive at the office?",["Thursday at 10:00","Thursday at noon","Friday at noon","Wednesday evening"],1,"'I can be there at noon' (Thursday)."),
+    Q("What does Linda want to see after lunch?",["The city","The manager's house","The airport","The new product"],3,"'I'd like to see the new product'.")]}
+],
+V:[
+{t:"Văn phòng",w:[["meeting","n","cuộc họp","The meeting starts at nine."],["schedule","n","lịch trình","Please check the schedule."],["manager","n","quản lý","The manager is in her office."],["desk","n","bàn làm việc","Put the files on my desk."],["report","n","báo cáo","I wrote a short report."],["deadline","n","hạn chót","The deadline is Friday."],["colleague","n","đồng nghiệp","My colleague speaks French."],["copy","v","sao chép, photo","Please copy this page."]]},
+{t:"Du lịch",w:[["ticket","n","vé","I bought two tickets."],["flight","n","chuyến bay","Our flight leaves at noon."],["passport","n","hộ chiếu","Don't forget your passport."],["luggage","n","hành lý","Her luggage is heavy."],["reservation","n","sự đặt chỗ","I have a reservation for two."],["arrive","v","đến nơi","We arrive at six."],["depart","v","khởi hành","The train departs at 8:15."],["hotel","n","khách sạn","The hotel is near the station."]]},
+{t:"Mua sắm",w:[["price","n","giá cả","The price is low."],["discount","n","giảm giá","We offer a 10% discount."],["receipt","n","biên lai","Keep your receipt."],["customer","n","khách hàng","The customer wants a refund."],["cashier","n","thu ngân","Pay the cashier."],["refund","n","tiền hoàn lại","I'd like a refund."],["sale","n","đợt giảm giá","The sale ends Sunday."],["order","n/v","đơn hàng; đặt hàng","I placed an order online."]]}
+]},
+intermediate:{n:"Intermediate",d:"Dành cho trình độ trung cấp (khoảng B1): hội thoại công việc, quảng cáo, memo và từ vựng nhân sự, tài chính, công nghệ.",c:"#3d5a98",
+L:[
+{t:"Đơn hàng bị giao trễ",s:["W: Mr. Brown, this is Sandra from Delta Supplies. I'm calling about your order.","M: Yes, it was supposed to arrive yesterday.","W: I apologize. There was a delay at the warehouse because of a system error. It will be delivered by Friday, and we'll waive the shipping fee.","M: Friday is fine, but I need the printers for a training session on Thursday. Can you send half of the order earlier?","W: Let me check. I'll call you back within the hour."],
+ q:[Q("Why is the woman calling?",["To place a new order","To explain a delay","To request payment","To confirm a training date"],1,"Cô ấy xin lỗi vì đơn hàng bị trễ."),
+    Q("What will the company do for the man?",["Refund the full order","Send a free printer","Waive the shipping fee","Extend the warranty"],2,"'we'll waive the shipping fee'."),
+    Q("What does the man ask for?",["To cancel the order","A larger discount","A different printer","Part of the order earlier"],3,"'send half of the order earlier'.")]},
+{t:"Thông báo cuộc họp",s:["Good morning, everyone. Before we begin, I'd like to announce that our quarterly sales review has been moved from Wednesday to Friday at 3 p.m. because the conference room is being repainted. Please send me your sales figures by Thursday noon so I can prepare the summary. Also, a reminder that parking in lot B will be unavailable next week."],
+ q:[Q("What is the speaker announcing?",["A new employee","A change of meeting schedule","A promotion","A budget cut"],1,"Cuộc họp bị dời từ thứ Tư sang thứ Sáu."),
+    Q("Why has the meeting been moved?",["The manager is traveling","There is a holiday","The room is being repainted","The system is down"],2,"'the conference room is being repainted'."),
+    Q("What should listeners do by Thursday noon?",["Park in lot B","Book a room","Submit expense reports","Send their sales figures"],3,"'send me your sales figures by Thursday noon'.")]}
+],
+R:[
+{t:"Quảng cáo khách sạn",p:"HARBOR VIEW HOTEL – WEEKEND SPECIAL\nBook two nights between October 1 and November 30 and get the third night free. Enjoy free breakfast, free Wi-Fi, and access to our spa. Offer cannot be combined with other discounts. Reservations must be made online at least 7 days before arrival.",
+ q:[Q("What is being advertised?",["A restaurant","A hotel promotion","A travel agency","A spa training course"],1,"Ưu đãi lưu trú: ở 2 đêm tặng đêm thứ 3."),
+    Q("What is included in the offer?",["Airport transfer","Dinner","Car rental","Free breakfast"],3,"'free breakfast, free Wi-Fi'."),
+    Q("What is required to get the offer?",["Booking online at least 7 days ahead","Paying in cash","Staying a full month","Joining a membership"],0,"'Reservations must be made online at least 7 days before arrival'.")]},
+{t:"Memo về báo cáo chi phí",p:"MEMO\nTo: All Department Heads\nFrom: Karen Wu, Human Resources\nStarting next month, employees will submit travel expense reports through the new online system instead of paper forms. Reports must be filed within 10 days of returning from a trip; late reports will not be reimbursed. Training sessions will be held on the 5th and 12th. Attendance is required for anyone who travels for business.",
+ q:[Q("What is the purpose of the memo?",["To announce a new expense reporting system","To schedule a business trip","To hire new staff","To change the vacation policy"],0,"Chuyển từ biểu mẫu giấy sang hệ thống trực tuyến."),
+    Q("What happens if a report is late?",["It is returned","The employee must retrain","It will not be reimbursed","It is sent to HR"],2,"'late reports will not be reimbursed'."),
+    Q("Who must attend the training?",["All department heads","New employees only","Karen Wu's team","Employees who travel for business"],3,"'Attendance is required for anyone who travels for business'.")]}
+],
+V:[
+{t:"Nhân sự",w:[["applicant","n","ứng viên","Each applicant must send a résumé."],["résumé","n","sơ yếu lý lịch","Update your résumé."],["interview","n/v","buổi phỏng vấn","The interview is on Monday."],["qualification","n","trình độ, bằng cấp","She has the right qualifications."],["promote","v","thăng chức","He was promoted to manager."],["resign","v","từ chức","She resigned last week."],["benefit","n","phúc lợi","The job offers good benefits."],["recruit","v","tuyển dụng","We plan to recruit ten staff."]]},
+{t:"Tài chính",w:[["budget","n","ngân sách","The budget is limited."],["invoice","n","hóa đơn","Please pay the invoice by May 5."],["expense","n","chi phí","Travel expenses are reimbursed."],["revenue","n","doanh thu","Revenue rose by 5%."],["profit","n","lợi nhuận","The firm made a profit."],["payment","n","sự thanh toán","Payment is due in 30 days."],["invest","v","đầu tư","They invest in new equipment."],["account","n","tài khoản","Open a bank account."]]},
+{t:"Công nghệ",w:[["install","v","cài đặt","Install the program."],["update","v/n","cập nhật","Update the software."],["password","n","mật khẩu","Change your password."],["network","n","mạng","The network is down."],["software","n","phần mềm","We use accounting software."],["backup","n","bản sao lưu","Make a backup of the files."],["upgrade","v","nâng cấp","We will upgrade the system."],["device","n","thiết bị","Turn off all devices."]]}
+]},
+advanced:{n:"Advanced",d:"Dành cho người học nâng cao (B2 trở lên): đàm phán, báo cáo kinh doanh, chính sách và từ vựng chuyên ngành.",c:"#b3401e",
+L:[
+{t:"Đàm phán hợp đồng",s:["M: We've reviewed your proposal, and the pricing is competitive. However, the delivery timeline concerns us.","W: We quoted twelve weeks because of the custom components. If you can finalize the specifications by the end of the month, we may be able to reduce it to ten.","M: That would help. Our launch is scheduled for early March, so any delay would be costly.","W: Understood. I'll draft an amendment with a penalty clause for late delivery, and our legal team will send it to you tomorrow.","M: Good. In that case, I'll recommend we proceed."],
+ q:[Q("What is the man concerned about?",["The price","The product quality","The delivery timeline","The warranty"],2,"'the delivery timeline concerns us'."),
+    Q("What does the woman need to shorten the timeline?",["A larger deposit","Final specifications by month-end","A new supplier","Approval from legal"],1,"'finalize the specifications by the end of the month'."),
+    Q("What will the woman's company send tomorrow?",["A revised price list","A product sample","An invoice","A contract amendment"],3,"'draft an amendment ... legal team will send it'.")]},
+{t:"Cập nhật kết quả kinh doanh",s:["Thank you all for joining today's call. Despite higher material costs, our revenue grew eight percent this quarter, mainly driven by online sales in Asia. To protect our margins, we'll consolidate two regional warehouses by June, which is expected to save about two million dollars annually. We don't anticipate layoffs, as affected employees will be offered positions at the new facility."],
+ q:[Q("What is the main topic of the talk?",["A product recall","A merger","A new CEO","The company's quarterly results and plans"],3,"Doanh thu quý và kế hoạch hợp nhất kho."),
+    Q("What drove revenue growth?",["Online sales in Asia","Lower material costs","Higher prices","New stores"],0,"'mainly driven by online sales in Asia'."),
+    Q("What will happen to employees at the closing warehouses?",["They will be laid off","They will receive bonuses","They will be offered new positions","They will retire early"],2,"'offered positions at the new facility'.")]}
+],
+R:[
+{t:"Chính sách làm việc từ xa",p:"REMOTE WORK POLICY UPDATE (EXCERPT)\nFollowing a six-month pilot, the company will adopt a hybrid model beginning January. Employees whose roles permit remote work may work from home up to three days per week, provided they attend all scheduled in-person team meetings. Managers will evaluate productivity quarterly using project outcomes rather than hours logged. Employees who wish to work remotely full-time must submit a written request to their department head, which will be approved only in exceptional circumstances.",
+ q:[Q("What is the policy about?",["A hybrid work arrangement","A new office location","A reduction in staff","A salary increase"],0,"Mô hình làm việc kết hợp (hybrid)."),
+    Q("How will managers evaluate productivity?",["By hours logged","By project outcomes","By attendance","By employee surveys"],1,"'using project outcomes rather than hours logged'."),
+    Q("What is true about full-time remote work?",["It is available to all staff","It needs no approval","It is only for managers","It requires a written request and is rarely approved"],3,"Chỉ được duyệt trong 'exceptional circumstances'.")]},
+{t:"Email giải quyết khiếu nại",p:"Dear Mr. Alvarez,\nThank you for bringing the billing discrepancy to our attention. Upon reviewing your account, we found that you were charged twice for the premium plan in August. A refund of $49 will be processed within five to seven business days. As a gesture of goodwill, we have also extended your subscription by one month at no cost. Should you notice any further irregularities, please contact us directly at the number below.\nSincerely,\nPriya Nair, Customer Relations",
+ q:[Q("Why was the email sent?",["To promote a premium plan","To respond to a billing complaint","To cancel a subscription","To request payment"],1,"Phản hồi về sai lệch trong hóa đơn."),
+    Q("What caused the problem?",["A late payment","A canceled account","An incorrect address","A double charge"],3,"'charged twice for the premium plan'."),
+    Q("What is offered in addition to the refund?",["An extra month of subscription","A discount coupon","A free upgrade","A phone call"],0,"'extended your subscription by one month at no cost'.")]}
+],
+V:[
+{t:"Hợp đồng & đàm phán",w:[["negotiate","v","đàm phán","They negotiated a better price."],["clause","n","điều khoản","The clause limits liability."],["terminate","v","chấm dứt","Either party may terminate the contract."],["comply with","v","tuân thủ","All staff must comply with the policy."],["amend","v","sửa đổi","The agreement was amended."],["liability","n","trách nhiệm pháp lý","The firm accepts no liability."],["stipulate","v","quy định rõ","The contract stipulates 30 days' notice."],["renew","v","gia hạn","She renewed her lease."]]},
+{t:"Marketing & bán hàng",w:[["campaign","n","chiến dịch","The campaign targets young adults."],["target market","n","thị trường mục tiêu","Define your target market."],["brand","n","thương hiệu","A strong brand builds trust."],["competitor","n","đối thủ cạnh tranh","Our competitors cut prices."],["launch","v","ra mắt","They launch the product in May."],["demographic","n","nhóm nhân khẩu học","Younger demographics prefer apps."],["market share","n","thị phần","Our market share grew."],["consumer","n","người tiêu dùng","Consumer demand is rising."]]},
+{t:"Quản trị & hậu cần",w:[["allocate","v","phân bổ","Allocate resources wisely."],["streamline","v","tinh giản","We streamlined the process."],["supervise","v","giám sát","She supervises ten workers."],["implement","v","triển khai","Implement the new policy."],["shipment","n","lô hàng","The shipment arrived late."],["inventory","n","hàng tồn kho","Check the inventory."],["consolidate","v","hợp nhất","Consolidate the two offices."],["delegate","v","ủy quyền","Delegate routine tasks."]]}
+]}
+};
+const $=s=>document.querySelector(s),app=$("#app");
+const LS={get(k){try{return JSON.parse(localStorage.getItem("hub:"+k))}catch(e){return null}},set(k,v){try{localStorage.setItem("hub:"+k,JSON.stringify(v))}catch(e){}}};
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+function stopSpeech(){try{speechSynthesis.cancel()}catch(e){}}
+function say(lines,rate){
+ if(!("speechSynthesis" in window)){alert("Trình duyệt chưa hỗ trợ đọc tự động. Hãy dùng Chrome hoặc Safari mới.");return}
+ stopSpeech();
+ const vs=speechSynthesis.getVoices().filter(v=>/^en/i.test(v.lang)),v=vs.find(v=>/en-US/i.test(v.lang))||vs[0];
+ lines.forEach(l=>{const m=/^([MW]):\s*/.exec(l),u=new SpeechSynthesisUtterance(l.replace(/^([MW]):\s*/,""));
+  u.lang="en-US";if(v)u.voice=v;u.rate=rate;u.pitch=m?(m[1]==="M"?.8:1.25):1;speechSynthesis.speak(u)});
+}
+function quiz(box,qs,key,onCheck){
+ box.innerHTML=qs.map((x,n)=>`<div class="q"><p><b>${n+1}.</b> ${x.q}</p>`+x.o.map((o,j)=>`<label id="l${n}_${j}"><input type="radio" name="q${n}" value="${j}">${"ABCD"[j]}. ${o}</label>`).join("")+`<div class="ex" id="e${n}"></div></div>`).join("")+`<button id="chk">Chấm điểm</button><div id="res"></div>`;
+ $("#chk").onclick=()=>{
+  let sc=0;
+  qs.forEach((x,n)=>{
+   const pick=document.querySelector(`input[name=q${n}]:checked`),a=pick?+pick.value:-1;
+   if(a===x.a)sc++;
+   box.querySelectorAll(`input[name=q${n}]`).forEach(i=>i.disabled=true);
+   $("#l"+n+"_"+x.a).className="ok";
+   if(a>=0&&a!==x.a)$("#l"+n+"_"+a).className="no";
+   $("#e"+n).textContent=(a===x.a?"Đúng. ":a<0?"Chưa chọn. ":"Sai. ")+"Đáp án: "+"ABCD"[x.a]+". "+x.e;
+  });
+  const old=LS.get(key),best=old&&old.s>sc?old.s:sc;LS.set(key,{s:best,t:qs.length});
+  $("#chk").style.display="none";
+  $("#res").innerHTML=`<div class="score">${sc} / ${qs.length}</div><p class="meta">Điểm cao nhất: ${best} / ${qs.length}</p><button onclick="route()">Làm lại</button>`;
+  if(onCheck)onCheck();
+ };
+}
+const TABS=[["listening","Listening"],["reading","Reading"],["vocab","Từ vựng"]];
+function head(lv,sk){const L=D[lv];return `<p class="crumb"><a href="#/">Trang chủ</a> / ${L.n}</p><h1>${L.n}</h1><p class="sub">${L.d}</p><div class="tabs">`+TABS.map(([k,t])=>`<a class="${k===sk?"on":""}" href="#/${lv}/${k}">${t}</a>`).join("")+`</div>`}
+function home(){
+ app.innerHTML=`<section class="world-hero"><div class="world-title"><span class="eyebrow">🌈 Chào mừng đến với</span><h1>TOEIC<br>WORLD</h1><p>🐰 Cùng Hà Anh chinh phục TOEIC nhé!</p><p>Học vui · Tiến bộ mỗi ngày · Chạm tới mục tiêu</p><a class="btn" href="#/starter/listening">Bắt đầu hành trình →</a></div><div class="world-station">🚂 TOEIC WORLD<small>STUDY • PRACTICE • GROW</small></div><div class="world-track"></div><div class="world-cloud c1"></div><div class="world-cloud c2"></div><div class="world-cloud c3"></div><div class="world-balloon"></div><div class="world-mascots" aria-label="Thú cưng 3D đang chuyển động"><div class="toy rabbit" role="img" aria-label="Thỏ"><div class="ear"></div><div class="ear second"></div><div class="body"></div><div class="head"><i class="eye"></i><i class="eye right"></i><i class="cheek"></i><i class="cheek right"></i><i class="mouth"></i><i class="shine"></i><i class="muzzle"></i><i class="beak"></i></div><div class="arm"></div><div class="arm right"></div></div><div class="toy cat" role="img" aria-label="Mèo"><div class="ear"></div><div class="ear second"></div><div class="body"></div><div class="head"><i class="eye"></i><i class="eye right"></i><i class="cheek"></i><i class="cheek right"></i><i class="mouth"></i><i class="shine"></i><i class="muzzle"></i><i class="beak"></i></div><div class="arm"></div><div class="arm right"></div></div><div class="toy bear" role="img" aria-label="Gấu"><div class="ear"></div><div class="ear second"></div><div class="body"></div><div class="head"><i class="eye"></i><i class="eye right"></i><i class="cheek"></i><i class="cheek right"></i><i class="mouth"></i><i class="shine"></i><i class="muzzle"></i><i class="beak"></i></div><div class="arm"></div><div class="arm right"></div></div><div class="toy chick" role="img" aria-label="Gà con"><div class="ear"></div><div class="ear second"></div><div class="body"></div><div class="head"><i class="eye"></i><i class="eye right"></i><i class="cheek"></i><i class="cheek right"></i><i class="mouth"></i><i class="shine"></i><i class="muzzle"></i><i class="beak"></i></div><div class="arm"></div><div class="arm right"></div></div></div></section><div class="world-tag">✨ Chọn hành trình của bạn</div><h2>Khám phá 3 cấp độ TOEIC</h2><p class="sub">Mỗi cấp độ có bài Listening, Reading và từ vựng theo chủ đề, chấm điểm tự động kèm giải thích.</p><div class="levels">`+
+ Object.keys(D).map(k=>{const L=D[k],pet=k==='starter'?'rabbit':k==='intermediate'?'cat':'bear';return `<a class="lv" style="--c:${L.c}" href="#/${k}/listening"><h2>${k==='starter'?'🌱 ':k==='intermediate'?'⭐ ':'👑 '}${L.n}</h2><p>${L.d}</p><p class="meta">🎧 ${L.L.length} bài Listening · 📖 ${L.R.length} bài Reading · 🧸 ${L.V.length} chủ đề từ vựng</p><span class="world-tag">Bắt đầu học →</span><span class="toy-card"><span class="toy ${pet}"><i class="ear"></i><i class="ear second"></i><i class="body"></i><i class="head"><i class="eye"></i><i class="eye right"></i><i class="cheek"></i><i class="cheek right"></i><i class="mouth"></i></i><i class="arm"></i><i class="arm right"></i></span></span></a>`}).join('')+`<a class="lv" style="--c:#8b69d8" href="#/library"><h2>📚 Kho ôn tập</h2><p>Bài tập từ vựng và ngữ cảnh TOEIC theo từng cấp độ, có chấm điểm và giải thích.</p></a><a class="lv" style="--c:#e8a53d" href="#/lessons"><h2>🌟 Bài giảng</h2><p>Slide PowerPoint và PDF của từng buổi học do giáo viên cập nhật.</p></a><a class="lv" style="--c:#c17bce" href="#/my"><h2>🦊 Từ vựng của tôi</h2><p>Tự tạo chủ đề, thêm từ mới và ôn bằng flashcard, bài kiểm tra.</p></a></div><div class="home-shortcuts"><a class="shortcut" href="#/starter/listening"><span>🎧</span>Listening<small> Luyện nghe</small></a><a class="shortcut" href="#/starter/reading"><span>📖</span>Reading<small> Luyện đọc</small></a><a class="shortcut" href="#/starter/vocab"><span>🧸</span>Từ vựng<small> Theo chủ đề</small></a><a class="shortcut" href="#/library"><span>📝</span>Luyện đề<small> Thực hành</small></a><a class="shortcut" href="#/my"><span>🌈</span>Tiến độ<small> Ôn tập cá nhân</small></a></div><div class="box" style="text-align:center;background:linear-gradient(120deg,#fff0f7,#fff,#e8f8ff)"><h2>💖 Từng bước nhỏ — điểm số lớn!</h2><p class="sub" style="margin:0 auto 12px">Mỗi ngày luyện một chút, bạn sẽ tiến gần hơn tới mục tiêu TOEIC của mình.</p><a class="btn" href="test.html">Làm test đầu vào ✨</a></div>`;
+}
+function list(lv,sk){
+ const L=D[lv],items=sk==="listening"?L.L:sk==="reading"?L.R:L.V;
+ app.innerHTML=head(lv,sk)+`<div class="grid">`+items.map((it,i)=>{
+  const b=LS.get(`${lv}-${sk}-${i}`),n=sk==="vocab"?it.w.length+" từ":it.q.length+" câu";
+  return `<a class="card" href="#/${lv}/${sk}/${i}"><b>${it.t}</b><span class="meta">${n}</span>${b?`<div class="best">Điểm cao nhất: ${b.s}/${b.t}</div>`:""}</a>`}).join("")+`</div>`;
+}
+function item(lv,sk,i,mode){
+ const L=D[lv],key=`${lv}-${sk}-${i}`,back=`<p><a href="#/${lv}/${sk}">← Quay lại danh sách</a></p>`;
+ if(sk==="listening"){
+  const it=L.L[i];if(!it)return list(lv,sk);
+  app.innerHTML=head(lv,sk)+back+`<h2>${it.t}</h2><div class="box"><p style="margin-top:0">Nghe đoạn hội thoại hoặc bài nói, rồi trả lời câu hỏi. Bạn có thể nghe lại nhiều lần.</p><button id="play">Nghe</button><button class="g" id="stop">Dừng</button> <select id="rate" aria-label="Tốc độ"><option value="0.8">Chậm</option><option value="1" selected>Bình thường</option><option value="1.15">Nhanh</option></select></div><div id="qb"></div><div class="box" id="tr" hidden><b>Transcript</b><p class="pass" style="margin-bottom:0">${it.s.map(x=>x.replace(/^M:/,"Man:").replace(/^W:/,"Woman:")).join("\n")}</p></div>`;
+  $("#play").onclick=()=>say(it.s,+$("#rate").value);$("#stop").onclick=stopSpeech;
+  quiz($("#qb"),it.q,key,()=>{$("#tr").hidden=false});
+ }else if(sk==="reading"){
+  const it=L.R[i];if(!it)return list(lv,sk);
+  app.innerHTML=head(lv,sk)+back+`<h2>${it.t}</h2><div class="box pass">${it.p}</div><div id="qb"></div>`;
+  quiz($("#qb"),it.q,key);
+ }else{
+  const it=L.V[i];if(!it)return list(lv,sk);
+  if(mode==="quiz"){
+   const ms=it.w.map(x=>x[2]),qs=shuffle(it.w).map(x=>{const o=shuffle([x[2],...shuffle(ms.filter(m=>m!==x[2])).slice(0,3)]);return Q(`Nghĩa của <b>${x[0]}</b> là gì?`,o,o.indexOf(x[2]),`${x[0]} (${x[1]}): ${x[2]}. Ví dụ: ${x[3]}`)});
+   app.innerHTML=head(lv,sk)+back+`<h2>Kiểm tra: ${it.t}</h2><div id="qb"></div>`;quiz($("#qb"),qs,key);
+  }else{
+   app.innerHTML=head(lv,sk)+back+`<h2>${it.t}</h2><p><a class="btn" href="#/${lv}/vocab/${i}/quiz">Làm bài kiểm tra</a></p><div class="grid">`+it.w.map(x=>`<div class="w"><b>${x[0]}</b> <i>(${x[1]})</i> <button class="sp" data-w="${x[0]}" aria-label="Nghe phát âm ${x[0]}">🔊</button><div>${x[2]}</div><div class="ex">${x[3]}</div></div>`).join("")+`</div>`;
+  }
+ }
+}
+/* ===== Kho ôn tập: câu hỏi mới biên soạn theo các chủ điểm từ tài liệu tham khảo ===== */
+const REVIEW={
+starter:{title:"Starter · Nền tảng",desc:"Từ vựng công việc, mua sắm, du lịch và giao tiếp cơ bản.",qs:[
+ Q("Please keep the ______ after you pay. You may need it to return the item.",["receipt","schedule","passport","deadline"],0,"Receipt là biên lai; thường dùng khi đổi hoặc trả hàng."),
+ Q("Our flight will ______ at 7:30 a.m., so please arrive at the airport early.",["depart","refund","install","resign"],0,"Depart nghĩa là khởi hành."),
+ Q("The manager has a busy ______ today, with four meetings and two interviews.",["schedule","discount","luggage","cashier"],0,"Schedule là lịch trình."),
+ Q("This jacket costs $80, but there is a 20% ______ this week.",["discount","invoice","network","benefit"],0,"Discount nghĩa là giảm giá."),
+ Q("If you need a room for two nights, please make a ______ in advance.",["reservation","receipt","promotion","colleague"],0,"Reservation là việc đặt chỗ/đặt phòng."),
+ Q("Choose the best word: My ______ helped me finish the report before Friday.",["colleague","cashier","passenger","customer"],0,"Colleague là đồng nghiệp."),
+ Q("The store closes at 9 p.m. Please pay at the ______ before then.",["cashier","platform","lobby","department"],0,"Cashier là thu ngân."),
+ Q("I cannot finish this task today. The ______ is tomorrow morning.",["deadline","flight","refund","receipt"],0,"Deadline là hạn chót."),
+]},
+intermediate:{title:"Intermediate · Trung cấp",desc:"Từ vựng nhân sự, tài chính, tuyển dụng và hoạt động doanh nghiệp.",qs:[
+ Q("All travel ______ must be submitted within ten days of returning.",["expenses","profits","benefits","qualifications"],0,"Expenses là các khoản chi phí."),
+ Q("The company plans to ______ three new sales representatives next month.",["recruit","resign","reimburse","postpone"],0,"Recruit nghĩa là tuyển dụng."),
+ Q("Please pay the attached ______ by the end of the month.",["invoice","résumé","agenda","allowance"],0,"Invoice là hóa đơn yêu cầu thanh toán."),
+ Q("Because demand increased, the firm reported higher annual ______.",["revenue","interview","vacancy","equipment"],0,"Revenue là doanh thu; profit là lợi nhuận."),
+ Q("Applicants should send a ______ and a cover letter before Friday.",["résumé","receipt","forecast","contractor"],0,"Résumé là sơ yếu lý lịch/CV."),
+ Q("The meeting was ______ until Friday because the conference room was unavailable.",["postponed","installed","recruited","reimbursed"],0,"Postpone nghĩa là hoãn lại."),
+ Q("Employees will use the new online system to ______ their travel costs.",["claim","advertise","resign","negotiate"],0,"Claim expenses là yêu cầu thanh toán/hoàn trả chi phí."),
+ Q("The firm made a healthy ______ after reducing operating costs.",["profit","applicant","deadline","reservation"],0,"Profit là lợi nhuận sau khi trừ chi phí."),
+]},
+advanced:{title:"Advanced · Nâng cao",desc:"Từ vựng kinh doanh, xu hướng, chính sách và cách diễn đạt trang trọng.",qs:[
+ Q("The board approved a plan to ______ the outdated approval process and reduce delays.",["streamline","fluctuate","withdraw","overlook"],0,"Streamline nghĩa là tinh giản để hiệu quả hơn."),
+ Q("Sales have fallen for three consecutive quarters, indicating a downward ______.",["trend","benefit","vacancy","incentive"],0,"Downward trend là xu hướng đi xuống."),
+ Q("The revised policy will be ______ in stages over the next six months.",["phased in","written off","taken over","ruled out"],0,"Phase in nghĩa là triển khai dần theo từng giai đoạn."),
+ Q("The supplier agreed to ______ the contract after both parties identified errors.",["amend","depart","recruit","reimburse"],0,"Amend a contract là sửa đổi hợp đồng."),
+ Q("The company is reviewing overheads in an effort to ______ operating costs.",["reduce","broaden","strengthen","fluctuate"],0,"Reduce costs nghĩa là giảm chi phí."),
+ Q("Despite monthly ______ in demand, overall revenue rose by 8% this year.",["fluctuations","qualifications","reservations","recruitments"],0,"Fluctuations là những biến động lên xuống."),
+ Q("Management decided to ______ the rollout until the security review was complete.",["defer","streamline","amend","expand"],0,"Defer nghĩa là trì hoãn/để lại đến thời điểm sau."),
+ Q("The proposal was rejected because its projected benefits did not ______ the implementation costs.",["outweigh","phase in","account for","comply with"],0,"Outweigh nghĩa là lớn hơn/vượt trội hơn về mức độ hoặc giá trị."),
+]}
+};
+function reviewPage(level){
+ const keys=Object.keys(REVIEW),selected=keys.includes(level)?level:"";
+ const tabs=`<p class="crumb"><a href="#/">Trang chủ</a> / Kho ôn tập</p><h1>Kho thư viện ôn tập TOEIC</h1><p class="sub">Bài tập luyện tập mới được biên soạn theo các chủ điểm từ tài liệu tham khảo đã tải lên; không sao chép nguyên văn bài tập trong sách. Chọn cấp độ để luyện và xem giải thích sau khi nộp bài.</p><div class="tabs">`+[["","Tất cả cấp độ"],...keys.map(k=>[k,REVIEW[k].title])].map(([k,t])=>`<a class="${k===selected?"on":""}" href="#/library${k?"/"+k:""}">${t}</a>`).join("")+`</div>`;
+ if(selected){const b=REVIEW[selected];app.innerHTML=tabs+`<div class="box"><h2>${b.title}</h2><p class="sub">${b.desc}</p><p class="meta">${b.qs.length} câu hỏi · Chấm điểm tự động</p><div id="reviewQuiz"></div></div>`;quiz($("#reviewQuiz"),b.qs,"review-"+selected);return;}
+ app.innerHTML=tabs+`<div class="grid">`+keys.map(k=>`<a class="card" href="#/library/${k}"><b>${REVIEW[k].title}</b><span class="meta">${REVIEW[k].qs.length} câu hỏi</span><p class="sub">${REVIEW[k].desc}</p></a>`).join("")+`</div>`;
+}
+
+function route(){
+ stopSpeech();window.scrollTo(0,0);
+ const [lv,sk,i,mode]=(location.hash.slice(2)||"").split("/").filter(Boolean);
+ if(lv==="library"){document.body.removeAttribute("data-lv");return reviewPage(sk)}
+ if(lv==="lessons"){document.body.removeAttribute("data-lv");return lessonsPage(sk)}
+ if(lv==="my"){document.body.removeAttribute("data-lv");return sk?myTopic(sk,i):myHome()}
+ document.body.dataset.lv=D[lv]?lv:"";if(!D[lv]){document.body.removeAttribute("data-lv");return home()}
+ if(!sk||!TABS.some(t=>t[0]===sk))return list(lv,"listening");
+ if(i===undefined)return list(lv,sk);
+ item(lv,sk,+i,mode);
+}
+/* ===== Từ vựng của tôi (lưu trong localStorage, khóa "hub:my") ===== */
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const MY={load(){const d=LS.get("my");return Array.isArray(d)?d:[]},save(d){LS.set("my",d)}};
+const newId=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const myHead=t=>`<p class="crumb"><a href="#/">Trang chủ</a> / <a href="#/my">Từ vựng của tôi</a> / ${esc(t.name)}</p><h1>${esc(t.name)}</h1>`;
+function myClean(x){
+ if(!Array.isArray(x))return null;
+ return x.filter(t=>t&&typeof t.name==="string"&&t.name.trim()&&Array.isArray(t.words)).map(t=>({name:t.name.trim().slice(0,60),words:t.words.filter(w=>w&&typeof w.w==="string"&&typeof w.m==="string"&&w.w.trim()&&w.m.trim()).map(w=>({w:w.w.trim().slice(0,80),t:String(w.t||"").slice(0,12),m:w.m.trim().slice(0,200),e:String(w.e||"").slice(0,300)}))}));
+}
+function myHome(){
+ const d=MY.load();
+ app.innerHTML=`<p class="crumb"><a href="#/">Trang chủ</a> / Từ vựng của tôi</p><h1>Từ vựng của tôi</h1><p class="sub">Tự tạo chủ đề, thêm từ mới rồi ôn bằng flashcard và bài kiểm tra. Dữ liệu được lưu ngay trên trình duyệt này.</p>`+
+ `<form class="box" id="nt"><b>Tạo chủ đề mới</b><div class="row"><input class="fi" id="tn" placeholder="Tên chủ đề, ví dụ: Email công việc" maxlength="60" required><button>Tạo chủ đề</button></div></form>`+
+ `<div class="grid">`+(d.length?d.map(t=>{const b=LS.get("my-"+t.id);return `<a class="card" href="#/my/${t.id}"><b>${esc(t.name)}</b><span class="meta">${t.words.length} từ</span>${b?`<div class="best">Điểm cao nhất: ${b.s}/${b.t}</div>`:""}</a>`}).join(""):`<p class="meta">Bạn chưa có chủ đề nào. Hãy tạo chủ đề đầu tiên ở trên.</p>`)+`</div>`+
+ `<h2>Sao lưu</h2><p class="sub">Dữ liệu chỉ nằm trên trình duyệt này. Hãy xuất file để sao lưu hoặc chuyển sang thiết bị khác, rồi nhập lại bằng nút bên dưới.</p><button class="g" id="ex">Xuất file JSON</button><button class="g" id="im">Nhập file JSON</button><input type="file" id="imf" accept=".json,application/json" hidden><div id="msg" class="meta" role="status"></div>`;
+ $("#nt").onsubmit=e=>{e.preventDefault();const name=$("#tn").value.trim();if(!name)return;const t={id:newId(),name:name.slice(0,60),words:[]};const d=MY.load();d.push(t);MY.save(d);location.hash="#/my/"+t.id};
+ $("#ex").onclick=()=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([JSON.stringify(MY.load(),null,1)],{type:"application/json"}));a.download="tu-vung-cua-toi.json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+ $("#im").onclick=()=>$("#imf").click();
+ $("#imf").onchange=e=>{
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{
+   let x=null;try{x=myClean(JSON.parse(r.result))}catch(err){}
+   if(!x){$("#msg").textContent="File không hợp lệ. Hãy chọn file JSON đã xuất từ trang này.";return}
+   const d=MY.load();let add=0;
+   x.forEach(t=>{let c=d.find(y=>y.name===t.name);if(!c){c={id:newId(),name:t.name,words:[]};d.push(c)}
+    t.words.forEach(w=>{if(!c.words.some(v=>v.w.toLowerCase()===w.w.toLowerCase()&&v.m===w.m)){c.words.push(w);add++}})});
+   MY.save(d);myHome();$("#msg").textContent="Đã nhập "+add+" từ mới.";
+  };
+  r.readAsText(f);
+ };
+}
+function myTopic(id,mode){
+ const d=MY.load(),t=d.find(x=>x.id===id);
+ if(!t){location.hash="#/my";return}
+ const n=t.words.length,back=`<p><a href="#/my/${t.id}">← Quay lại chủ đề</a></p>`;
+ if(mode==="quiz"){
+  const ms=[...new Set(t.words.map(x=>x.m))];
+  if(ms.length<2){app.innerHTML=myHead(t)+back+`<p class="sub">Cần ít nhất 2 từ có nghĩa khác nhau để làm bài kiểm tra.</p>`;return}
+  const qs=shuffle(t.words).map(x=>{const o=shuffle([x.m,...shuffle(ms.filter(m=>m!==x.m)).slice(0,3)]);return Q(`Nghĩa của <b>${esc(x.w)}</b> là gì?`,o.map(esc),o.indexOf(x.m),`${x.w}${x.t?` (${x.t})`:""}: ${x.m}.${x.e?" Ví dụ: "+x.e:""}`)});
+  app.innerHTML=myHead(t)+back+`<h2>Kiểm tra</h2><div id="qb"></div>`;
+  quiz($("#qb"),qs,"my-"+t.id);return;
+ }
+ if(mode==="flash"){
+  if(!n){app.innerHTML=myHead(t)+back+`<p class="sub">Chủ đề chưa có từ nào. Hãy thêm từ trước khi ôn flashcard.</p>`;return}
+  let deck=t.words.slice(),i=0,show=false;
+  app.innerHTML=myHead(t)+back+`<h2>Flashcard</h2><div id="fc"></div>`;
+  const draw=()=>{
+   const x=deck[i];
+   $("#fc").innerHTML=`<div class="fcard" id="card" tabindex="0" role="button" aria-label="Lật thẻ">${show?`<div><b>${esc(x.m)}</b>${x.e?`<div class="ex">${esc(x.e)}</div>`:""}</div>`:`<div><span class="big">${esc(x.w)}</span>${x.t?` <i>(${esc(x.t)})</i>`:""}</div>`}</div><p class="meta">Thẻ ${i+1} / ${deck.length}. Bấm vào thẻ để lật.</p><button class="g" id="pv">← Trước</button><button id="nx">Sau →</button><button class="g" id="sh">Xáo trộn</button><button class="g" id="sd">🔊 Nghe</button>`;
+   const flip=()=>{show=!show;draw();$("#card").focus()};
+   $("#card").onclick=flip;
+   $("#card").onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();flip()}};
+   $("#pv").onclick=()=>{i=(i-1+deck.length)%deck.length;show=false;draw()};
+   $("#nx").onclick=()=>{i=(i+1)%deck.length;show=false;draw()};
+   $("#sh").onclick=()=>{deck=shuffle(deck);i=0;show=false;draw()};
+   $("#sd").onclick=()=>say([x.w],.9);
+  };
+  draw();return;
+ }
+ app.innerHTML=myHead(t)+`<p><a href="#/my">← Quay lại danh sách</a></p><p><a class="btn" href="#/my/${t.id}/flash">Flashcard</a><a class="btn" href="#/my/${t.id}/quiz">Làm bài kiểm tra</a><button class="g" id="rn">Đổi tên</button><button class="g" id="dt">Xóa chủ đề</button></p>`+
+ `<form class="box" id="nw"><b>Thêm từ mới</b><div class="row"><input class="fi" id="fw" placeholder="Từ tiếng Anh" maxlength="80" required><select class="fi" id="ft" aria-label="Loại từ"><option value="">Loại từ</option><option>n</option><option>v</option><option>adj</option><option>adv</option><option>prep</option></select></div><div class="row"><input class="fi" id="fm" placeholder="Nghĩa tiếng Việt" maxlength="200" required></div><div class="row"><input class="fi" id="fe" placeholder="Câu ví dụ (không bắt buộc)" maxlength="300"></div><button>Thêm từ</button></form>`+
+ `<h2>${n} từ</h2>`+(n?`<div class="grid">`+t.words.map((x,k)=>`<div class="w"><button class="x" style="float:right" data-del="${k}" aria-label="Xóa từ ${esc(x.w)}">✕</button><b>${esc(x.w)}</b>${x.t?` <i>(${esc(x.t)})</i>`:""} <button class="sp" data-w="${esc(x.w)}" aria-label="Nghe phát âm ${esc(x.w)}">🔊</button><div>${esc(x.m)}</div>${x.e?`<div class="ex">${esc(x.e)}</div>`:""}</div>`).join("")+`</div>`:`<p class="meta">Chưa có từ nào. Hãy thêm từ đầu tiên ở trên.</p>`);
+ $("#nw").onsubmit=e=>{e.preventDefault();const w=$("#fw").value.trim(),m=$("#fm").value.trim();if(!w||!m)return;t.words.push({w,t:$("#ft").value,m,e:$("#fe").value.trim()});MY.save(d);myTopic(id);$("#fw").focus()};
+ document.querySelectorAll("[data-del]").forEach(b=>b.onclick=()=>{t.words.splice(+b.dataset.del,1);MY.save(d);myTopic(id)});
+ $("#rn").onclick=()=>{const v=prompt("Tên mới cho chủ đề:",t.name);if(v&&v.trim()){t.name=v.trim().slice(0,60);MY.save(d);myTopic(id)}};
+ $("#dt").onclick=()=>{if(confirm(`Xóa chủ đề "${t.name}" và toàn bộ ${n} từ trong đó?`)){MY.save(d.filter(x=>x!==t));try{localStorage.removeItem("hub:my-"+t.id)}catch(e){}location.hash="#/my"}};
+}
+/* ===== Bài giảng: danh sách đọc từ lessons.json (giáo viên chỉnh file này trên GitHub) ===== */
+let lessonTok=0;
+const OFFICE=["ppt","pptx","pps","ppsx","doc","docx","xls","xlsx"];
+function lessonFile(f){
+ if(!f||typeof f!=="object")return null;
+ let u;try{u=new URL(String(f.file||f.url||""),location.href)}catch(e){return null}
+ if(u.protocol!=="https:"&&u.protocol!=="http:"&&u.protocol!==location.protocol)return null;
+ const ext=String(f.type||(u.pathname.match(/\.(\w+)$/)||[])[1]||"").toLowerCase();
+ const web=/^https?:$/.test(u.protocol),office=OFFICE.includes(ext)&&web;
+ return{
+  name:String(f.name||u.pathname.split("/").pop()||"Tài liệu"),
+  href:u.href,
+  view:office?"https://view.officeapps.live.com/op/view.aspx?src="+encodeURIComponent(u.href):u.href,
+  icon:ext==="pdf"?"📄":/^pp/.test(ext)?"📊":OFFICE.includes(ext)?"📝":"🔗",
+  down:ext==="pdf"||OFFICE.includes(ext)
+ };
+}
+async function lessonsPage(flt){
+ const tok=++lessonTok,keys=Object.keys(D),f=keys.includes(flt)?flt:"";
+ const head=`<p class="crumb"><a href="#/">Trang chủ</a> / Bài giảng</p><h1>Bài giảng</h1><p class="sub">Slide và tài liệu của từng buổi học do giáo viên cập nhật. Bấm "Xem" để mở ngay hoặc "Tải về" để lưu vào máy.</p><div class="tabs">`+
+  [["","Tất cả"],...keys.map(k=>[k,D[k].n])].map(([k,t])=>`<a class="${k===f?"on":""}" href="#/lessons${k?"/"+k:""}">${t}</a>`).join("")+`</div>`;
+ app.innerHTML=head+`<p class="meta" role="status">Đang tải danh sách bài giảng...</p>`;
+ let data=[];
+ try{const r=await fetch("lessons.json",{cache:"no-store"});if(r.ok){const j=await r.json();data=Array.isArray(j)?j:Array.isArray(j&&j.lessons)?j.lessons:[]}}catch(e){}
+ if(tok!==lessonTok)return;
+ const items=data.filter(l=>l&&typeof l.title==="string"&&(!f||!l.level||l.level===f)).sort((a,b)=>(+b.buoi||0)-(+a.buoi||0));
+ const manager=`<details class="box"><summary style="cursor:pointer;font-weight:700">＋ Giáo viên: thêm bài giảng / tải tệp</summary>
+ <p class="meta">Tạo bài giảng và xuất lessons.json. GitHub Pages là website tĩnh nên biểu mẫu không thể tự ghi file lên GitHub. Sau khi xuất JSON, hãy tải tài liệu lên thư mục assets/lessons/ trong repository.</p>
+ <form id="lessonForm"><div class="row"><input class="fi" id="lessonTitle" maxlength="160" placeholder="Tên bài giảng" required><input class="fi" id="lessonBuoi" type="number" min="1" placeholder="Buổi số"></div>
+ <div class="row"><select class="fi" id="lessonLevel"><option value="">Chưa phân cấp độ</option><option value="starter">Starter</option><option value="intermediate">Intermediate</option><option value="advanced">Advanced</option></select><input class="fi" id="lessonDate" placeholder="Ngày học"></div>
+ <textarea class="fi" id="lessonNote" rows="2" maxlength="1000" placeholder="Ghi chú bài giảng"></textarea>
+ <p><label for="lessonFiles"><b>Chọn file tài liệu</b> (PDF, PowerPoint, Word, Excel...)</label><br><input id="lessonFiles" type="file" multiple accept=".pdf,.ppt,.pptx,.pps,.ppsx,.doc,.docx,.xls,.xlsx,.txt,.mp3,.mp4"></p>
+ <div id="lessonFileNames" class="meta">Chưa chọn tệp.</div><button type="submit">Thêm bài giảng</button><button type="button" class="g" id="downloadLessons">Tải lessons.json</button><div id="lessonMsg" class="meta" role="status"></div></form></details>`;
+ app.innerHTML=head+manager+(items.length?items.map(l=>{
+  const fs=(Array.isArray(l.files)?l.files:[]).map(lessonFile).filter(Boolean),lv=typeof l.level==="string"&&keys.includes(l.level)?D[l.level]:null;
+  return `<div class="box"><b>${l.buoi?`Buổi ${esc(l.buoi)} – `:""}${esc(l.title)}</b>${lv?`<span class="tag">${lv.n}</span>`:""}${l.date?` <span class="meta">· ${esc(l.date)}</span>`:""}${l.note?`<p class="sub" style="margin:6px 0 8px">${esc(l.note)}</p>`:""}`+
+   (fs.length?fs.map(x=>`<div class="frow"><span>${x.icon} ${esc(x.name)}</span><a class="btn" href="${esc(x.view)}" target="_blank" rel="noopener">Xem</a>${x.down?`<a class="btn g" href="${esc(x.href)}" download>Tải về</a>`:""}</div>`).join(""):`<p class="meta" style="margin:6px 0 0">Chưa có tệp đính kèm.</p>`)+`</div>`;
+ }).join(""):`<p class="meta">Chưa có bài giảng nào. Giáo viên sẽ cập nhật sau mỗi buổi học.</p>`);
+ const exportData=data.slice(), filesInput=$("#lessonFiles"), fileNames=$("#lessonFileNames"), form=$("#lessonForm"), msg=$("#lessonMsg");
+ filesInput.onchange=()=>{fileNames.textContent=filesInput.files.length?[...filesInput.files].map(x=>x.name).join(" · "):"Chưa chọn tệp.";};
+ form.onsubmit=e=>{
+  e.preventDefault();const title=$("#lessonTitle").value.trim(), selected=[...filesInput.files];
+  if(!title){msg.textContent="Hãy nhập tên bài giảng.";return}
+  if(!selected.length){msg.textContent="Hãy chọn ít nhất một tệp tài liệu.";return}
+  const files=selected.map(file=>({name:file.name,file:"assets/lessons/"+file.name,type:(file.name.split(".").pop()||"").toLowerCase()}));
+  exportData.push({title,buoi:$("#lessonBuoi").value?Number($("#lessonBuoi").value):"",level:$("#lessonLevel").value,date:$("#lessonDate").value.trim(),note:$("#lessonNote").value.trim(),files});
+  msg.textContent="Đã thêm vào danh sách xuất ("+exportData.length+" bài). Nhấn Tải lessons.json.";
+  form.reset();fileNames.textContent="Chưa chọn tệp.";
+ };
+ $("#downloadLessons").onclick=()=>{
+  const blob=new Blob([JSON.stringify(exportData,null,2)],{type:"application/json;charset=utf-8"});
+  const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="lessons.json";a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+  msg.textContent="Đã tạo lessons.json. Hãy thay file này trong GitHub và tải tài liệu lên assets/lessons/.";
+ };
+}
+document.addEventListener("click",e=>{const b=e.target.closest(".sp");if(b)say([b.dataset.w],.9)});
+window.addEventListener("hashchange",route);route();
+</script>
+</body>
+</html>
